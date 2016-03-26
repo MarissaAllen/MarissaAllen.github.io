@@ -1,16 +1,16 @@
-# DALI Project Collaborative Intro WEBTIVITY
+ # Marissa's Personal Website
 
-
-## Overview 
+<!--
+## Overview
 
 *  In your groups, each person will use git to clone a version of a new landing page template project for your team.  
 *  Then you'll edit some html and css to make this template page reflect what your project is about.
 *  Each person should add themselves into the team section
 *  Then you'll commit and merge your changes of the page with your teammates and push your changes to the git repo.
 
-  This mostly assumes that you are using a recent version of OS X, so your mileage may vary. Some of the template is broken in Firefox -- for now don't use firefox. 
+  This mostly assumes that you are using a recent version of OS X, so your mileage may vary. Some of the template is broken in Firefox -- for now don't use firefox.
 
-![](docs/img/square.png) indicates a step to do. 
+![](docs/img/square.png) indicates a step to do.
 
 
 ##1)  Tools
@@ -23,7 +23,7 @@
 
 * ###[git+github](http://www.github.com)
   git is a code collaboration tool but also will allow us to use github to host our pages! If you already have git then you can skip this step.
-  
+
   <br>![](docs/img/square.png) 1.2)  Go to [github.com](http://github.com) and create an account if you don't have one already!
   <br>![](docs/img/square.png) 1.3)  Install the github app from here: [Mac](http://mac.github.com) or [PC](http://windows.github.com).
   <br>![](docs/img/square.png) 1.4)  Run *GitHub* app, and set up with your new account.
@@ -41,7 +41,7 @@ We'll have to use some Terminal command line dark magic here.  Copy/paste is you
   <br>![](docs/img/square.png) 2.2)  ```git clone https://github.com/dali-lab/project-name.git```
   <br>![](docs/img/square.png) 2.3)  ```cd dali-1hr-webdev```
 
-what this does is change directory to your Desktop, then clones the the tutorial repository there, and then you cd into that cloned repository.  For the rest of this tutorial we assume that you have a Terminal window open and that you are cd'd into the repository you just cloned.  If you get any errors in the above give a shout! 
+what this does is change directory to your Desktop, then clones the the tutorial repository there, and then you cd into that cloned repository.  For the rest of this tutorial we assume that you have a Terminal window open and that you are cd'd into the repository you just cloned.  If you get any errors in the above give a shout!
 
 Some more Terminal commands that are useful:
 
@@ -59,23 +59,23 @@ You are now ready to start webdev for real!
 
   <br>![](docs/img/square.png) 3.0)  In Terminal run:  ```atom .``` For Windows, just open up atom and use 'Add Project Folder' and select the cloned directory from above.  
 
-This will open the current folder into the Atom text editor. Note the folder structure.  What are you reading now (in browser) is actually a [markdown](https://guides.github.com/features/mastering-markdown/) file: **README.md**. 
+This will open the current folder into the Atom text editor. Note the folder structure.  What are you reading now (in browser) is actually a [markdown](https://guides.github.com/features/mastering-markdown/) file: **README.md**.
 
 The main file that gets loaded for the site is **index.html**.
 The file that contains the majority of css styling is in **css/main.css**.
 Image assets are in **img**.
 Javascripts are in **js**.
 
-  <br>![](docs/img/square.png) 3.1) Lets view what is there already now. In Terminal (copy/paste):  ```python -m SimpleHTTPServer &``` 
+  <br>![](docs/img/square.png) 3.1) Lets view what is there already now. In Terminal (copy/paste):  ```python -m SimpleHTTPServer &```
 
 ![](docs/img/simpleserver.jpg)<br>
 this will start a simple little webserver so you can now access the page in your browser at: [http://localhost:8000](http://localhost:8000)
 
 *If you have Windows, get an error, or don't have python, never fear, for now just open index.html manually in your browser, this breaks for certain javascript but will work for this example.*
-  
-  <br>![](docs/img/square.png) 3.2) back in Atom, 
 
-Play around and make some changes.  In particular add yourself to the team section!  Change some images.  We'll walk through this step but in particular see if you can find *(command+f)* teammates and see how to change the text and image.  To insert a new image just put a .jpg or .png in the img folder (make sure it is square) and change the ```img src=``` line. 
+  <br>![](docs/img/square.png) 3.2) back in Atom,
+
+Play around and make some changes.  In particular add yourself to the team section!  Change some images.  We'll walk through this step but in particular see if you can find *(command+f)* teammates and see how to change the text and image.  To insert a new image just put a .jpg or .png in the img folder (make sure it is square) and change the ```img src=``` line.
 
 
 
@@ -91,7 +91,7 @@ Now that you've made some changes to the site, we'll go over how to use git to c
 You have already done this step using the ```git clone``` command.
 
 ###Check status
-Use ```git status``` to see what git thinks you have been working on. If you see *untracked* that means git doesn't know that you want to commit those file.  Use ```git add filename``` on those files to tell git to track them. 
+Use ```git status``` to see what git thinks you have been working on. If you see *untracked* that means git doesn't know that you want to commit those file.  Use ```git add filename``` on those files to tell git to track them.
 
 ###Commit your changes:
 In Terminal:  ```git commit -am "i made some changes"```
@@ -103,7 +103,7 @@ In Terminal:  ```git commit -am "i made some changes"```
 ###Pull your teammates changes:
 In Terminal:  ```git pull```
 
-This will check the github remote server for any changes and download and merge them into your local repo. 
+This will check the github remote server for any changes and download and merge them into your local repo.
 
 ###Merge Conflicts
 
@@ -123,8 +123,8 @@ If you were to do this by hand, git takes the pretty code you wrote and injects 
 	=======
 	var h = 'Hi!';
 	>>>>>>> cb1abc6bd98cfc84317f8aa95a7662815417802d
-      
-where the line between  ```<<<HEAD``` and ```====``` is the line/lines of code that are relevant in your file, and between  ```====``` and ```>>>> cb1abc6``` are from the remote repository.  The crazy characters refer to the commit that the change comes from. 
+
+where the line between  ```<<<HEAD``` and ```====``` is the line/lines of code that are relevant in your file, and between  ```====``` and ```>>>> cb1abc6``` are from the remote repository.  The crazy characters refer to the commit that the change comes from.
 
 Since we've been using Atom so far there is a nice plugin to help visualize this a little better.
 
@@ -142,9 +142,9 @@ All you have to do to continue is:  ```git add thefixedfile``` which indicated t
 Now that you've resolved any conflicts you're ready to push to the remote repository!
 
   <br>![](docs/img/square.png) ```git push origin gh-pages```
-  
+
   ```origin``` is the remote you are pushing to and is named origin by default
- 
+
  ```gh-pages``` is the branch you are pushing. Using the ```gh-pages``` branch lets github know that you would like this code hosted as a static website.
 
 ###Done!
@@ -156,4 +156,4 @@ Now you can go to [http://dali-lab.github.io/project-name](http://dali-lab.githu
 
 To stop the python web server process just run:
 ```pgrep -f SimpleHTTPServer| xargs kill```
-
+ -->
