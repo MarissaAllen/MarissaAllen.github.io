@@ -1,0 +1,451 @@
+html, button, input, select, textarea {
+  color: #222;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: rgba(205, 201, 201, 0.77);
+  text-shadow: none;
+}
+::selection {
+  background: rgba(205, 201, 201, 0.77);
+  text-shadow: none;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Parallax Scroll
+   ========================================================================== */
+
+body, html {
+  height: 100%;
+  min-height: 100%;
+  background-color: #ffffff;
+  font-family: "Raleway";
+  font-size: 1.0em;
+}
+h1, h2, h3 {
+  font-weight: 600;
+  text-align: center;
+}
+h2, h3 {
+  /*color: rgb(12, 75, 82);*/
+  color: rgb(193, 94, 39);
+}
+h1 {
+  font-size: 45px;
+  color: rgb(230, 230, 230);
+  /*color: rgb(184, 184, 184);*/
+  padding-top: 100px;
+  z-index: 2;
+}
+h4, h5 {
+  /*color: rgb(128, 26, 38);*/
+  /*color: rgb(12, 75, 82);*/
+  /*color: rgb(91, 107, 119);*/
+  color: rgb(74, 98, 116);
+
+}
+p {
+  line-height: 160%;
+}
+hr {
+  border-top: 5px;
+  height: 4px;
+  background-color: rgb(124, 125, 126);
+  width: 100%;
+  margin-bottom: 40px;
+}
+.no-js {
+  padding-top: 106px;
+}
+section {
+  opacity: 0;
+}
+.loaded section, .no-js section {
+  opacity: 1;
+  -webkit-transition: opacity 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out;
+  transition: opacity 300ms ease-out;
+}
+main {
+  overflow-x: hidden;
+}
+footer .logo {
+  margin-top: 20px;
+  width: 150px;
+}
+footer {
+  background-color: white;
+  height: 145px;
+  position: relative;
+}
+header .logo {
+  margin-top: 40px;
+  margin-left: -15px;
+  width: 350px;
+}
+header {
+  /*background-color: rgba(243, 241, 239, .95);*/
+  background-color: rgba(255, 255, 255, 0.95);
+  position: fixed;
+  ;
+  width: 100%;
+  z-index: 80;
+}
+
+/* navbar*/
+
+.navbar {
+  position: relative;
+  ;
+  min-height: 50px;
+  margin-bottom: 5px;
+  border: 1px solid transparent;
+}
+.navbar .navbar-nav {
+  text-align: center;
+  margin-top: 22px;
+}
+.navbar-brand {
+  height: auto;
+  padding: 5px 5px;
+}
+.navbar-brand img {
+  width: 325px;
+}
+.nav>li>a {
+  display: inline-block;
+  font-weight: 600;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+  background-color: transparent;
+  color: rgb(170, 170, 170);
+  text-decoration: none;
+}
+a {
+  /*color: rgb(57, 87, 96);*/
+  color: rgb(91, 107, 119);
+}
+a:hover {
+  text-decoration: none;
+  color: rgb(170, 170, 170);
+}
+.navbar-toggle {
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  background-color: rgba(193, 193, 193, 0.83);
+}
+.navbar-toggle .icon-bar {
+  background-color: rgb(91, 107, 119);
+  width: 22px;
+  height: 3px;
+  margin-top: -1px;
+}
+.navbar-toggle .icon-bar+.icon-bar {
+  margin-top: 3px;
+}
+
+/* bit of padding in the main content containers */
+
+.content .container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+}
+.cover .baselayer {
+  position: relative;
+  /*background-position: center center;*/
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.cover .baselayer2 {
+  position: relative;
+  background-position: inherit;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.content .baselayer {
+  background-image: url('../img/beigespeckle_background.png');
+  /*background-color: rgb(242, 242, 242);*/
+  /*background-color: rgba(255, 255, 255, 0.95);*/
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/*.covercontainer, .contentcontainer {
+  background-color: transparent;
+  z-index: 80;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /*position: relative;
+}*/
+
+.row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.posParent {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.bottom {
+  display: table-cell;
+  vertical-align: bottom;
+}
+.center {
+  display: table-cell;
+  vertical-align: center;
+}
+.project {
+  display: none
+}
+
+/*IMAGE RESIZING*/
+
+.testimonial img {
+  width: 200px;
+}
+.profile img {
+  width: 250px;
+}
+.level img {
+  /*padding-left: 20px;*/
+  width: 90px;
+  /*margin-right: 90px;*/
+}
+.accent img {
+  width: 60px;
+}
+.logo img {
+  width: 350px;
+  margin-left: 0px;
+  margin-bottom: -50px;
+  z-index: 80;
+  /*padding-bottom: 20px;*/
+}
+
+/* Cover 0*/
+
+#cover-0 .baselayer {
+  background-color: transparent;
+  background-image: url('../img/mountainsCenterBlur.jpg');
+}
+#cover-0 .baselayer2 {
+  background-image: url('../img/mountainsBlurD.jpg');
+}
+
+/* Cover 1*/
+
+#cover-1 .baselayer {
+  background-color: transparent;
+  background-image: url('../img/Chaco-5.jpg');
+}
+#cover-1 .baselayer2 {
+  background-image: url('../img/Chaco-5BlurD.jpg');
+}
+
+/* Cover 2*/
+
+#cover-2 .baselayer {
+  background-color: transparent;
+  background-image: url('../img/cam2.jpg');
+}
+#cover-2 .baselayer2 {
+  background-image: url('../img/cam2BlurD.jpg');
+}
+
+/*.example-glyphs {
+  padding-top: 50px;
+  font-size: 40px;
+}
+
+.glyphicon-chevron-down {*/
+
+
+/*color: rgb(12, 75, 82);*/
+
+
+/*color: rgb(128, 26, 38);
+
+}*/
+
+
+/* ==========================================================================
+   Featherlight Gallery Lightbox
+   ========================================================================== */
+
+
+/*@media all {*/
+
+
+/*.lightbox { display: none; }*/
+
+
+/*
+   .fl-page h1, .fl-page h3, .fl-page h4 {
+     font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-weight: 100;
+     letter-spacing: 1px;
+   }*/
+
+.fl-page h1 {
+  font-size: 110px;
+  margin-bottom: 0.5em;
+}
+.fl-page h1 span {
+  font-size: 30px;
+  color: #333;
+}
+.fl-page h3 {
+  text-align: right;
+  font-size: 15px;
+}
+.fl-page h4 {
+  font-size: 2em;
+}
+.fl-page .jumbotron {
+  margin-top: 2em;
+}
+.fl-page .row {
+  margin-top: 2em;
+}
+
+/* customized gallery */
+
+.featherlight-gallery {
+  background: rgba(100, 100, 100, 0.5);
+}
+.featherlight-gallery .featherlight-content {
+  background: rgb(255, 255, 255);
+}
+.featherlight-gallery .featherlight-next:hover, .featherlight-gallery .featherlight-previous:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+.featherlight-gallery .featherlight-next:hover span, .featherlight-gallery .featherlight-previous:hover span {
+  font-size: 25px;
+  line-height: 25px;
+  margin-top: -12.5px;
+  color: #fff;
+}
+.featherlight-gallery .featherlight-close {
+  background: transparent;
+  color: black;
+  font-size: 1.2em;
+}
+.gallery h2 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* text slide */
+
+.thumbnail a {
+  text-decoration: none;
+}
+.blurb {
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+.blurb h2 {
+  text-align: center;
+  font-size: 40px;
+}
+.blurb .detail {
+  display: none;
+}
+.blurb .lightbox {
+  text-align: center;
+}
+.featherlight .blurb {
+  display: inline-block;
+  width: 70vw;
+  height: auto;
+  color: rgb(34, 34, 34);
+}
+.featherlight .blurb .detail {
+  color: rgb(34, 34, 34);
+  font-size: inherit;
+  display: inherit;
+  width: inherit;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.featherlight .blurb .lightbox {
+  display: none;
+}
+.featherlight-previous {
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  right: 95%;
+  height: 80vw;
+}
+.featherlight-next {
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  left: 95%;
+  height: 80vw;
+  min-width: 30px;
+}
+.lightbox img {
+  max-height: 150px;
+  height: 10vw;
+  min-height: 130px;
+}
+.detail .photo {
+  max-width: 50vw;
+  min-width: 200px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.detail .small-photo {
+  max-width: 30vw;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.detail .video {
+  width: 40vw;
+  height: 25vw;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
