@@ -378,6 +378,11 @@ a:hover {
 .thumbnail a {
   text-decoration: none;
 }
+a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
+    /*border-color: #337ab7;*/
+    border-color: rgb(74, 98, 116);
+
+}
 .blurb {
   display: inline-block;
   width: auto;
