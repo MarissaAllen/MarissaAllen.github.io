@@ -59,7 +59,6 @@ h4, h5 {
   /*color: rgb(12, 75, 82);*/
   /*color: rgb(91, 107, 119);*/
   color: rgb(74, 98, 116);
-
 }
 p {
   line-height: 160%;
@@ -290,14 +289,6 @@ a:hover {
   background-image: url('../img/cam2BlurD.jpg');
 }
 
-/*.example-glyphs {
-  padding-top: 50px;
-  font-size: 40px;
-}
-
-.glyphicon-chevron-down {*/
-
-
 /*color: rgb(12, 75, 82);*/
 
 
@@ -307,22 +298,57 @@ a:hover {
 
 
 /* ==========================================================================
+   Youtube
+   ========================================================================== */
+
+.youtube-container {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 600px;
+}
+.youtube-player {
+  display: block;
+  width: 100%;
+  /* assuming that the video has a 16:9 ratio */
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: hand;
+  cursor: pointer;
+  display: block;
+}
+img.youtube-thumb {
+  bottom: 0;
+  display: block;
+  left: 0;
+  margin: auto;
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: auto
+}
+div.play-button {
+  height: 72px;
+  width: 72px;
+  left: 50%;
+  top: 50%;
+  margin-left: -36px;
+  margin-top: -36px;
+  position: absolute;
+  background: url("http://i.imgur.com/TxzC70f.png") no-repeat;
+}
+
+/* ==========================================================================
    Featherlight Gallery Lightbox
    ========================================================================== */
 
 
 /*@media all {*/
-
-
-/*.lightbox { display: none; }*/
-
-
-/*
-   .fl-page h1, .fl-page h3, .fl-page h4 {
-     font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-     font-weight: 100;
-     letter-spacing: 1px;
-   }*/
 
 .fl-page h1 {
   font-size: 110px;
@@ -379,9 +405,8 @@ a:hover {
   text-decoration: none;
 }
 a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
-    /*border-color: #337ab7;*/
-    border-color: rgb(74, 98, 116);
-
+  /*border-color: #337ab7;*/
+  border-color: rgb(74, 98, 116);
 }
 .blurb {
   display: inline-block;
