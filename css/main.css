@@ -342,7 +342,12 @@ div.play-button {
   position: absolute;
   background: url("http://i.imgur.com/TxzC70f.png") no-repeat;
 }
-
+/*.video {
+  width: 40vw;
+  height: 25vw;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}*/
 /* ==========================================================================
    Featherlight Gallery Lightbox
    ========================================================================== */

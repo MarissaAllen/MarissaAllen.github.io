@@ -68,7 +68,7 @@
     causeRepaintsOn.css("z-index", 1);
     adjustWindow();
   });
-  
+
 //youtube video
 (function() {
     var v = document.getElementsByClassName("youtube-player");
