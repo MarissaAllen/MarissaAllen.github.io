@@ -266,9 +266,9 @@ a:hover {
   background-color: transparent;
   background-image: url('../img/mountainsCenterBlur.jpg');
 }
-#cover-0 .baselayer2 {
+/*#cover-0 .baselayer2 {
   background-image: url('../img/mountainsBlurD.jpg');
-}
+}*/
 
 /* Cover 1*/
 
@@ -302,7 +302,7 @@ a:hover {
    Youtube
    ========================================================================== */
 
-.youtube-container {
+/*.youtube-container {
   display: block;
   margin: 20px auto;
   width: 100%;
@@ -310,10 +310,10 @@ a:hover {
 }
 .youtube-player {
   display: block;
-  width: 100%;
+  width: 100%;*/
   /* assuming that the video has a 16:9 ratio */
   /*padding-bottom: 56.25%;*/
-  overflow: hidden;
+  /*overflow: hidden;
   position: relative;
   width: 40vw;
   height: 25vw;
@@ -342,7 +342,7 @@ div.play-button {
   margin-top: -36px;
   position: absolute;
   background: url("http://i.imgur.com/TxzC70f.png") no-repeat;
-}
+}*/
 /*.video {
   width: 40vw;
   height: 25vw;
