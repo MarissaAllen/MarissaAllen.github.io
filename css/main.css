@@ -113,9 +113,8 @@ header {
 
 .navbar {
   position: relative;
-  ;
   min-height: 50px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   border: 1px solid transparent;
 }
 .navbar .navbar-nav {
@@ -128,6 +127,7 @@ header {
 }
 .navbar-brand img {
   width: 325px;
+  margin-left: -10px;
 }
 .nav>li>a {
   display: inline-block;
@@ -152,7 +152,7 @@ a:hover {
 }
 .navbar-toggle {
   margin-top: 20px;
-  margin-right: 10px;
+  margin-right: -7px;
   margin-bottom: 0px;
   background-color: rgba(193, 193, 193, 0.83);
 }
