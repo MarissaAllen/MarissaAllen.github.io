@@ -66,14 +66,14 @@ The file that contains the majority of css styling is in **css/main.css**.
 Image assets are in **img**.
 Javascripts are in **js**.
 
-  <br>![](docs/img/square.png) 3.1) Lets view what is there already now. In Terminal (copy/paste):  ```python -m SimpleHTTPServer &```
+  <!-- <br>![](docs/img/square.png)--> 3.1) Lets view what is there already now. In Terminal (copy/paste):  ```python -m SimpleHTTPServer &```
 
-![](docs/img/simpleserver.jpg)<br>
+<!-- ![](docs/img/simpleserver.jpg)<br> -->
 this will start a simple little webserver so you can now access the page in your browser at: [http://localhost:8000](http://localhost:8000)
 
 *If you have Windows, get an error, or don't have python, never fear, for now just open index.html manually in your browser, this breaks for certain javascript but will work for this example.*
 
-  <br>![](docs/img/square.png) 3.2) back in Atom,
+  <!-- <br>![](docs/img/square.png) 3.2) back in Atom,
 
 Play around and make some changes.  In particular add yourself to the team section!  Change some images.  We'll walk through this step but in particular see if you can find *(command+f)* teammates and see how to change the text and image.  To insert a new image just put a .jpg or .png in the img folder (make sure it is square) and change the ```img src=``` line.
 
@@ -152,7 +152,7 @@ Now that you've resolved any conflicts you're ready to push to the remote reposi
 Now you can go to [http://dali-lab.github.io/project-name](http://dali-lab.github.io/project-name) to see your site!
 
 
-<br>
+<br> -->
 
 To stop the python web server process just run:
 ```pgrep -f SimpleHTTPServer| xargs kill```
