@@ -136,6 +136,7 @@ header {
   padding-right: 35px;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-size: large;
 }
 .nav>li>a:hover, .nav>li>a:focus {
   background-color: transparent;
@@ -266,9 +267,6 @@ a:hover {
   background-color: transparent;
   background-image: url('../img/mountainsCenterBlur.jpg');
 }
-/*#cover-0 .baselayer2 {
-  background-image: url('../img/mountainsBlurD.jpg');
-}*/
 
 /* Cover 1*/
 
@@ -302,13 +300,13 @@ a:hover {
    Youtube
    ========================================================================== */
 
-.youtube-container {
+.detail .youtube-container {
   display: block;
   margin: 20px auto;
   width: 100%;
   max-width: 600px;
 }
-.youtube-player {
+.detail .youtube-player {
   display: block;
   width: 100%;
   /* assuming that the video has a 16:9 ratio */
@@ -347,9 +345,6 @@ div.play-button {
 /* ==========================================================================
    Featherlight Gallery Lightbox
    ========================================================================== */
-
-
-/*@media all {*/
 
 .fl-page h1 {
   font-size: 110px;
