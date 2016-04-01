@@ -432,7 +432,7 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
   padding-left: 40px;
   padding-right: 40px;
 }
-.featherlight .blurb .lightbox {
+.featherlight .blurb .lightbox, .featherlight .blurb .lightbox a {
   display: none;
 }
 .featherlight-previous {
