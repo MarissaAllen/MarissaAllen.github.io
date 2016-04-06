@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- loads a google font -->
+	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700'>
+	<!-- loads bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<!-- loads css -->
+	<link type="text/css" rel="stylesheet" href="css/vendor/featherlight.min.css" />
+	<link type="text/css" rel="stylesheet" href="css/vendor/featherlight.gallery.min.css" />
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/h5bp.css">
+	<link rel="stylesheet" href="/highlight/styles/obsidian.css">
+	<script src="/highlight/highlight.pack.js"></script>
+	<!--call code highlighting-->
+	<script>
+		hljs.initHighlightingOnLoad();
+	</script>
+
+
+
+</head>
+
+<body>
+	<main>
+							<!--Renderer-->
+							<div class="text-center">
+								<h2>CS 77 Renderer </h2>
+							<br>
+							<h3>Development: C++<h3>
+							</div>
+
+							<br>
+							<div class= "text-center">
+							<p>Implemented a raytracer that takes in JSON files and renders the image, here are some of the features that it implements.
+							On the right are the before photos and on the left are the after photos</p>
+							<h3>Texture Tiling</h3>
+							<img class="photo"  src="img/graphics/textures.jpg"></img>
+							<h3>Quad Lights</h3>
+							<p>Area light sampling for quad surfaces.</p>
+							<img class="photo"  src="img/graphics/quads.png"></img>
+							<h3>Sphere Lights</h3>
+							<p>Spherical light sampling for sphere surface. </p>
+							<img class="photo"  src="img/graphics/spheres.png"></img>
+							<h3>Environmental Illumination</h3>
+							<p>Environment lighting by mapping environment and sampling the BRDF</p>
+							<img class="photo"  src="img/graphics/enviros.png"></img>
+							<h3>Indirect Lighting</h3>
+							<p>Recursive path tracing of rays and stops at a max depth.</p>
+							<img class="photo"  src="img/graphics/indirects.png"></img>
+							<h3>Microfacet Materials</h3>
+							<p>Microfacet modification to Blinn-Phong illumination for improved materials</p>
+							<img class="photo"  src="img/graphics/micros.png"></img>
+							<h3>Depth of Field</h3>
+							<p>Depth of field blurring over the lens of the camera using Monte Carlo sampling </p>
+							<img class="photo"  src="img/graphics/depths.png"></img>
+						</div>
+
+							<pre>insert raytrace code maaybe monte carlo</pre>
+
+
+	</main>
+
+	<!--SCRIPTS-->
+
+	<!-- load some vendor js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="js/vendor/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vendor/featherlight.gallery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vendor/imagesloaded.js"></script>
+	<script src="js/vendor/skrollr.js"></script>
+
+	<!-- load my js -->
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
