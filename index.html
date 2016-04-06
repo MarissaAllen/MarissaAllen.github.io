@@ -91,15 +91,16 @@
 					<br>
 					<div class="row">
 						<div class="profile col-md-4 text-center">
-								<img src="img/profilepic1.jpg" class="img-square">
+							<img src="img/profilepic1.jpg" class="img-square">
 						</div>
 						<br>
 						<div class="col-md-7 text-left">
 							<p>
 								Hi! My name is Marissa. I grew up in Southwest Colorado in the beautiful Rocky Mountains and I'm a proud member of the Navajo Nation. I didn't discover my passion for Computer Science until my sophomore year in college. I took one course and now I've
-								completed my Bachelor's degree and MS in Computer Science from Dartmouth College in 2014 and 2015 respectively. During my Graduate program, I worked as a senior designer and developer at Dartmouth's Digital Arts and Innovation Lab (<a href="http://dali.dartmouth.edu/">DALI</a>). There
-								I enjoyed working on both the design and development aspects of web, iOS, and product development projects from beginning to end. Since graduating, I've discovered my passion for traveling by visiting Japan, Vietnam, and Cambodia and I like
-								to spend my free time reading, hiking in the mountains, and chilling with my cat.
+								completed my Bachelor's degree and MS in Computer Science from Dartmouth College in 2014 and 2015 respectively. During my Graduate program, I worked as a senior designer and developer at Dartmouth's Digital Arts and Innovation Lab (
+								<a
+										href="http://dali.dartmouth.edu/">DALI</a>). There I enjoyed working on both the design and development aspects of web, iOS, and product development projects from beginning to end. Since graduating, I've discovered my passion for traveling by visiting Japan, Vietnam, and Cambodia
+									and I like to spend my free time reading, hiking in the mountains, and chilling with my cat.
 							</p>
 						</div>
 					</div>
@@ -230,250 +231,36 @@
 						<!---Giphy Cats -->
 						<div class="row">
 							<div class="col-md-4 text-center">
-								<a class="thumbnail gallery" href="#eleventh">
+								<a class="thumbnail gallery" href="projects/cats.html" data-featherlight="ajax">
 									<h2>React Giphy Cats </h2>
-									<div id="eleventh" class="blurb">
-										<p class="lightbox"><img src="img/cats/cavey.jpg" /></p>
-										<span class="detail ">
-							<div class="text-center">
-								<h2>React Giphy Cats</h2>
-							<br>
-							<h3>In Progress: Swift, React Native</h3>
-							<img class="photo"  src="img/cats/cavey.jpg"></img>
-							</div>
-							<br>
-							<p> This is a current project I've been working on using React Native. This is an app that dectects stress and
-							shows the user a fun cat gif to provide a brief distraction and hopefully alieviate stress. In order, to
-						combat the correlation of stress and gifs, the app also inserts gifs at random times throughout the day.</p>
-							<pre>$(document).ready(function(){$('.gallery').featherlightGallery();});</pre>
-					</span>
+									<div class="lightbox"><img src="img/cats/cavey.jpg" />
 									</div>
 								</a>
 							</div>
 
 							<!--Thesis-->
 							<div class="col-md-4 text-center">
-								<a class="thumbnail gallery" href="#tenth">
+								<a class="thumbnail gallery" href="projects/thesis.html" data-featherlight="ajax">
 									<h2>MS Thesis </h2>
-									<div id="tenth" class="blurb">
-										<p class="lightbox"><img src="img/thesis/cards.jpg"/></p>
-										<div class="detail ">
-											<div class="text-center">
-												<h2>MS Thesis </h2>
-												<br>
-												<h3>iPad app: Swift, Scenekit, CocoaPods</h3>
-												<img class="photo" src="img/thesis/foldlings_header.jpg"></img>
-											</div>
-											<!-- Explain/Brief Description -->
-											<p>Foldlings was a joint project where we created interative 3D pop-up card design app. The user sketchs a 2D design and our iPad app converts that design into a 3D representation in kirigami pop-up form. For this project I was responsible for
-												transforming the 2D shapes drawn by the user into 3D planes, rendering the interactive 3D simulation, and creating the svg file to send to a laser cutter. You can read more here.
-											</p>
-											<div class="text-center">
-												<img class="small-photo" src="img/thesis/thesis.gif"></img>
-											</div>
-											<!-- Explain the problem, then describe the solution-->
-											<p>To create 3D plane objects from user's sketch, we reduce the sketch into edges and created a Swift method to follow those edges forming planes using the Polygon Walk method. Those planes are then linked together into an acyclic graph which
-												defines how each plane behaves in the 3D simulation. After the user is satisfied with their card, they can create an svg file to send to a laser cutter and have the physical card in seconds. Full code here.
-											</p>
-											<div class="text-center">
-												<h3>The Process</h3>
-												<img class="photo" src="img/thesis/fullpipeline.jpg"></img>
-												<img class="photo" src="img/thesis/sinewaveex.jpg"></img>
-											</div>
-											<h3>The GetPlanes Method:</h3>
-											<p>This Swift method creates Plane objects that are passed to Scenekit to become 3-D planes from 2-D Edge objects by using the Polygon Walk method. This function iterates through all the edges connecting endpoints to startpoints until it forms
-												a closed shape. There are many constraints including whether the edge has been previously visited or if the shape created is just a line. The function also sets certain attributes of the newly created Plane object such as the number of folds
-												and the top and bottom edges.
-											</p>
-
-											<pre>
-												<code>
-// does a traversal of all the edges to find all the planes
-    func getPlanes(){
-        self.visited = []
-        planelist = []
-        for (i, start) in enumerate(self.edges)//traverse edges
-        {
-            //keep a fold count by plane to catch flaps and holes
-            var foldcount = 0
-            var folds:[Edge] = []
-
-            if start.dirty {
-                var p : [Edge] = []//plane
-                var isContained = contains(self.visited, start)
-                if !isContained// skipped over already visited edges
-                {   p.append(start)
-                    if start.kind == .Fold{
-                        foldcount++
-                        folds.append(start)
-                    }
-                    // set the start as top and bottom edge
-                    var topEdge : Edge = start
-                    var bottomEdge : Edge = start
-
-                    self.visited.append(start)
-                    var closest = self.getClosest(start)// get closest adjacent edge
-
-                    // check if twin has not been crossed and not in plane
-                    while !CGPointEqualToPoint(closest.end, start.start) || contains(p, closest)
-                    {   p.append(closest)
-
-                        if closest.kind == .Fold{
-                            foldcount++
-                            folds.append(closest)
-                        }
-                        //mark if this is a top edge here by comparing y's, this shold be the midpoint
-                        if(makeMid(closest.start.y, closest.end.y) < makeMid(topEdge.start.y, topEdge.end.y)) {
-                            topEdge = closest
-                        }
-                        //mark if this is a bottom edge here by comparing y's, this shold be the midpoint
-                        if(makeMid(closest.start.y, closest.end.y) > makeMid(bottomEdge.start.y, bottomEdge.end.y)) {
-                            bottomEdge = closest
-                        }
-
-                        self.visited.append(closest)
-                        closest = self.getClosest(closest)
-                    }
-                    //if the edge is the last edge and the edge isn't start edge
-                    if CGPointEqualToPoint(closest.end, start.start) && !CGPointEqualToPoint(start.start, start.end)
-                    {   p.append(closest)
-                        self.visited.append(closest)
-                    }
-                    //// if you didn't cross twin or if the edge is one point, make it a plane
-                    if !closest.crossed || CGPointEqualToPoint(start.start, start.end)
-                    {   var plane = Plane(edges: p)
-
-                        //set plane's top and bottom edge
-                        plane.topEdge = topEdge
-                        plane.bottomEdge = bottomEdge
-
-                        //set foldcount
-                        plane.foldcount = foldcount
-
-                        //set plane for edges
-                        plane.edges.map({$0.plane = plane})
-
-
-                        // add planes to planelist
-                        planelist.insertIntoOrdered(plane, ordering: {makeMid($0.topEdge.start.y, $0.topEdge.end.y) < makeMid($1.topEdge.start.y, $1.topEdge.end.y)})
-                    }
-                    closest.crossed = false
-                }
-            }
-        }
-        self.planes.linkPlanes(planelist)
-    }
-	</code>
-</pre>
-										</div>
+									<div class="lightbox"><img src="img/thesis/cards.jpg" />
 									</div>
 								</a>
 							</div>
 
 							<!--Kindle-->
 							<div class="col-md-4  text-center">
-								<a class="thumbnail gallery" href="#ninth">
+								<a class="thumbnail gallery" href="projects/kindle.html" data-featherlight="ajax">
 									<h2>Kindle Music Holder </h2>
-									<div id="ninth" class="blurb">
-										<p class="lightbox"><img src="img/kindle/kindle.jpg" /></p>
-										<span class="detail ">
-											<div class="text-center">
-												<h2>Kindle Music Holder </h2>
-												<br>
-												<h3>Product Design: Solidworks, 3D Printing<h3>
-												<img class="photo" src="img/kindle/designInAction.jpg"></img>
-											</div>
-											<p>The Dartmouth College Marching Band wanted to use Amazon Kindle Fire tablets as music readers instead
-												of paper sheet music. Their solution to attaching these tablets to their instruments was
-												to use velcro to hold the tablets to a thin piece of plastic which then clipped into an instrument lyre.
-												However, the tablets continued to fall off the instrument during marching band performances.
-											</p>
-											<div class="text-center">
-													<img class="photo" src="img/kindle/velcroLyre.jpg"></img>
-											</div>
-												<p>The goal of this project was to design a tablet mount that utilizes the pre-existing instrument lyres and securely
-												holds a tablet during marching band performances. This design had to be capable for expanding to large-scale manufacturing
-												by injection molding.
-											</p>
-											<div class="text-center">
-												<h3>Initial Mockups</h3>
-											<img class="photo" src="img/kindle/mockup.jpg"></img>
-											<h3>Some Prototypes</h3>
-										<img class="photo" src="img/kindle/protos.jpg"></img>
-										<img class="photo" src="img/kindle/impressionProtos.jpg"></img>
-										</div>
-												<p> There were many challenges, such as stability, weight, warping, and meeting injection molding requirements. One
-												problem in particular was ensuring stability while reducing weight. Eventually, this became the base design. </p>
-												<div class="text-center">
-													<h3>Basic Model</h3>
-											<img class="photo" src="img/kindle/basicModel.jpg"></img>
-											</div>
-												<p>The tablet rests on two legs and is secured at the top with inexpensive, easily-replacable rubber bands. However, as you can see in the photo below, the mount still required many iterations. In this design, the lyre attachment does not conform fully to the lyre,
-												leaving a space that allows it to wobble back and forth. To remedy this and to reduce weight,
-										I created an incline of the lyre profile and adjusted the design so allow the player to attach the lyre to either
-										the front or the back without losing stability.</p>
-										<div class="text-center">
-									<img class="photo" src="img/kindle/Angles1.jpg"></img>
-									</div>
-												<p>After multiple 3D prototypes and iterations, here is the final model. Its features include multiple holes to adjust for tablet size,
-												an inclined lyre profile for better stability, a raised lyre profile on both the front and the back of the mount for versatile
-												 lyre placement, an optional thumbscrew to provide tablet angle adjustment, and uniform thickness of the model
-												 so that it is completely injection-model ready  </p>
-												 <div class="text-center">
-											 <img class="photo" src="img/kindle/kindle.jpg"></img>
-											 </div>
-										</span>
+									<div class="lightbox"><img src="img/kindle/kindle.jpg" />
 									</div>
 								</a>
 							</div>
 
 							<!--Animated Linkages-->
 							<div class="col-md-4  text-center">
-								<a class="thumbnail gallery" href="#eighth">
+								<a class="thumbnail gallery" href="projects/links.html" data-featherlight="ajax">
 									<h2>Animated Linkages </h2>
-									<div id="eighth" class="blurb">
-										<p class="lightbox"><img src="img/linkages.jpg" /></p>
-										<span class="detail ">
-							<div class="text-center">
-								<h2>Animated Linkages </h2>
-							<br>
-							<h3>Development: Matlab<h3>
-							<img class="photo" src="img/linkages.jpg"></img>
-							</div>
-							<br>
-							<div class="text-center">
-							<h3>link1</h3>
-							<div class="youtube-container">
-								<div class="youtube-player video" data-id="UxRdvX7KnQs"></div>
-								<br>
-								<h3>link2</h3>
-								<div class="youtube-player video" data-id="FgPqvrWiUfk"></div>
-								<br>
-								<h3>link3</h3>
-								<div class="youtube-player video" data-id="mXTEQHz8CZE"></div>
-								<br>
-								<h3>link4</h3>
-								<div class="youtube-player video" data-id="GvuTo3QeSjg"></div>
-								<br>
-								<h3>Klann</h3>
-								<div class="youtube-player video" data-id="_hH5ih2ocEA"></div>
-								<br>
-							</div>
-						</div>
-
-							<p>This project was a continuation of study about linkage constraints based on this paper. One demonstration is a
-							man pushing a load. These models were recreated on thingiverse. I printed and assembled my own model (not shown)
-						and then recreated the behavior in previous moving links framework in matlab. Here is a demostration of the desired
-					behavior.</p>
-					<div class="text-center">
-					<div class="youtube-container">
-									<div class="youtube-player video" data-id="sbmPax3fRTc"></div>
-								<p> Here is the result from the code:</p>
-									<div class="youtube-player video" data-id="RvdW4RXQsMg"></div>
-								</div>
-							</div>
-
-					</span>
+									<div class="lightbox"><img src="img/linkages.jpg" />
 									</div>
 								</a>
 							</div>
@@ -481,125 +268,27 @@
 							<!-- second row of projects -->
 							<!--Logo-->
 							<div class="col-md-4  text-center">
-								<a class="thumbnail gallery" href="#seventh">
+								<a class="thumbnail gallery" href="projects/logo.html" data-featherlight="ajax">
 									<h2>Personal Logo Design </h2>
-									<div id="seventh" class="blurb">
-										<p class="lightbox"><img src="img/logo/logoMedDk.png" /></p>
-										<span class="detail ">
-							<div class="text-center">
-								<h2>Personal Logo Design </h2>
-							<br>
-							<h3>Design: Adobe Illustrator<h3>
-							</div>
-							<br>
-							<p>This is a showcase of my personal logo design process. I wanted it to represent various aspects of my life. So I started
-							with things like my favorite animal, mountains, and my heritage. </p>
-							<div class="text-center">
-								<h3>Inspirations<h3>
-								<img class="photo" src="img/logo/inspirations.jpg"></img>
-							</div>
-
-							<div class="text-center">
-								<h3>Thumbnail Sketches<h3>
-								<img class="photo" src="img/logo/thumbs.jpg"></img>
-							</div>
-							<div class="text-center">
-								<h3>Initial Designs<h3>
-								<img class="photo" src="img/logo/initial.jpg"></img>
-							</div>
-							<p>Once I had an idea I liked, I decided to iterate it to death, varying the colors, the text, and the background</p>
-							<div class="text-center">
-								<h3>Iterations<h3>
-								<img class="photo" src="img/logo/iterations.jpg"></img>
-							</div>
-							<p>After iterating, this is what I went with</p>
-							<div class="text-center">
-								<h3>Final Logo<h3>
-								<img class="small-photo" src="img/logo/logoMedDk.png"></img>
-								<img class="photo" src="img/logo/regHz.png"></img>
-
-							</div>
-					</span>
+									<div class="lightbox"><img src="img/logo/logoMedDk.png" />
 									</div>
 								</a>
 							</div>
 
 							<!--Amulet-->
 							<div class="col-md-4 text-center">
-								<a class="thumbnail gallery" href="#sixth">
+								<a class="thumbnail gallery" href="projects/amulet.html" data-featherlight="ajax">
 									<h2>Amulet Project </h2>
-									<div id="sixth" class="blurb">
-										<p class="lightbox"><img src="img/amulet/amuletLogo.jpg" /></p>
-										<span class="detail ">
-							<div class="text-center">
-								<h2>Amulet Project </h2>
-							<br>
-							<h3>Product Design: Vectorworks, Solidworks<h3>
-							<img class="photo" src="img/amulet/amuletWordLogo.jpg"></img>
-							</div>
-							<br>
-							<!-- http://amulet-project.org/ -->
-							<p>This project was in partnership with the Amulet team at Dartmouth who are designing and developing ‘Amulet’,
-								computational jewelry to monitor a person's health.
-								So far the prototype consists of an electronic bracelet and a software framework that enables developers to create
-								(and users to easily use) safe, secure, and efficient mHealth applications. More info here</p>
-							<p>I was part of a team where we had to design the case for the Amulet prototype. We went through several
-							iterations, initially using Vectorworks and transitioning to Solidworks. One of the biggest challenges
-						in designing the case was that we had to design around pre-fabricated boards while trying to reduce the size
-						of the previous design.</p>
-						<div class="text-center">
-							<h3>Early Models<h3>
-							<img class="photo" src="img/amulet/earlyModels.jpg"></img>
-							<h3>Final Models<h3>
-							<img class="photo" src="img/amulet/SWModels.jpg"></img>
-							<h3>Inside Amulet<h3>
-							<img class="photo" src="img/amulet/amuletInsides.jpg"></img>
-							<h3>Working Model<h3>
-							<img class="photo" src="img/amulet/printedModels.jpg"></img>
-						</div>
-					</span>
+									<div class="lightbox"><img src="img/amulet/amuletLogo.jpg" />
 									</div>
 								</a>
 							</div>
 
 							<!--Design-->
 							<div class="col-md-4 text-center">
-								<a class="thumbnail gallery" href="#fifth">
+								<a class="thumbnail gallery" href="projects/design.html" data-featherlight="ajax">
 									<h2>Design Gallery </h2>
-									<div id="fifth" class="blurb">
-										<p class="lightbox"><img src="img/design/designQuote.jpg" /></p>
-										<span class="detail ">
-							<div class="text-center">
-								<h2>Design Gallery </h2>
-							<br>
-							<h3>Design: Adobe Photoshop <h3>
-							</div>
-							<br>
-							<p>A collection of different designs ranging from print to web-design mockups</p>
-							<div class="text-center">
-
-								<h3>Logo Project<h3>
-								<img class="photo" src="img/design/KikoLogo.jpg"></img>
-								<h3>Expressive Shapes<h3>
-								<img class="photo" src="img/design/ExpressiveShapes.jpg"></img>
-								<img class="photo" src="img/design/designStyles.jpg"></img>
-								<h3>Poster Design<h3>
-								<img class="photo" src="img/design/design_quote.jpg"></img>
-								<img class="photo" src="img/design/posterAfter.jpg"></img>
-								<h3>Web Design<h3>
-									<img class="photo" src="img/design/gardenTeas.jpg"></img>
-									<img class="photo" src="img/design/S&kDesigns.jpg"></img>
-									<img class="photo" src="img/design/Sk8rDecks.jpg"></img>
-									<img class="photo" src="img/design/pageSpread.jpg"></img>
-								<h3>UI Design<h3>
-								<img class="photo" src="img/design/UIproject.jpg"></img>
-								<img class="photo" src="img/design/WorkflowUI.jpg"></img>
-								<h3>Video Project<h3>
-									<div class="youtube-container">
-										<div class="youtube-player video" data-id="V_FD4kHQPuA"></div>
-									</div>
-							</div>
-					</span>
+									<div class="lightbox"><img src="img/design/designQuote.jpg" />
 									</div>
 								</a>
 							</div>
@@ -607,57 +296,18 @@
 							<!-- third row of projects -->
 							<!--Drones-->
 							<div class="col-md-4 text-center">
-								<a class="thumbnail gallery" href="#fourth">
+								<a class="thumbnail gallery" href="projects/drones.html" data-featherlight="ajax">
 									<h2>Flying Drones </h2>
-									<div id="fourth" class="blurb">
-										<p class="lightbox"><img src="img/drones/crazyflieCopters.png" /></p>
-										<span class="detail ">
-							<div class="text-center">
-								<h2>Flying Drones </h2>
-							<br>
-							<h3>Development: C </h3>
-							<p>For this project, we programmed CrazyFly drones to be controlled through the </p>
-								<img class="photo" src="img/drones/fliers.jpg"></img>
-								<p>I was in charge of the state machine that directed the flier that paired on certain hand movements with drone manuvers and my partner set the parameters for the leap motion</p>
-								<div class="youtube-container">
-									<div class="youtube-player video" data-id="51mRWMtoc84"></div>
-								</div>
-							</div>
-							<br>
-							<pre>$(document).ready(function(){$('.gallery').featherlightGallery();});</pre>
-					</span>
+									<div class="lightbox"><img src="img/drones/crazyflieCopters.png" />
 									</div>
 								</a>
 							</div>
 
 							<!--Towers of Hanoi-->
 							<div class="col-md-4 text-center">
-								<a class="thumbnail gallery" href="#third">
+								<a class="thumbnail gallery" href="projects/towers.html" data-featherlight="ajax">
 									<h2>CS 98 Culminating Project</h2>
-									<div id="third" class="blurb">
-										<p class="lightbox"><img src="img/towers/TowersThumb.jpg" /></p>
-										<span class="detail ">
-							<div class="text-center">
-								<h2>CS 98 Culminating Project</h2>
-							<br>
-							<h3>Web Development: Javascript, HTML, CSS, Processing<h3>
-								<img class="photo" src="img/towers/Towers.jpg" ></img>
-							</div>
-							<br>
-							<p>Working in a team, this was my Senior Culminating experience. This class was designed to be an open-ended way
-								to self-learn web dev. The project's goal evolved into a way to help new computer science students understand
-								algorithms and learn Javascript. Our module focused on recursion, so we decided to
-								demostrate the Towers of Hanoi. On this project I worked on several aspects on the module the processing code,
-								the javascript that allows the code in the console to execute and move the rings.</p>
-							<div class= "text-center">
-								<div class="youtube-container">
-									<div class="youtube-player video" data-id="Qsphc26Rs8E"></div>
-								</div>
-							<p>	We later teamed up with Khan Academy and they used our example on their site.</p>
-								<img class="photo" src="img/towers/KhanTowers.jpg"></img>
-							</div>
-							<pre>$(document).ready(function(){$('.gallery').featherlightGallery();});</pre>
-					</span>
+									<div class="lightbox"><img src="img/towers/TowersThumb.jpg" />
 									</div>
 								</a>
 							</div>
@@ -665,76 +315,23 @@
 							<!-- fourth row of projects -->
 							<!--Renderer-->
 							<div class="col-md-4 col-md-offset-2 text-center">
-								<a class="thumbnail gallery" href="#second">
+								<a class="thumbnail gallery" href="projects/graphics.html" data-featherlight="ajax">
 									<h2>CS 77 Renderer </h2>
-									<div id="second" class="blurb">
-										<p class="lightbox"><img src="img/graphics/depth3.jpg" /></p>
-										<span class="detail ">
-							<div class="text-center">
-								<h2>CS 77 Renderer </h2>
-							<br>
-							<h3>Development: C++<h3>
-							</div>
-
-							<br>
-							<div class= "text-center">
-							<p>Implemented a raytracer that takes in JSON files and renders the image, here are some of the features that it implements.
-							On the right are the before photos and on the left are the after photos</p>
-							<h3>Texture Tiling</h3>
-							<img class="photo"  src="img/graphics/textures.jpg"></img>
-							<h3>Quad Lights</h3>
-							<p>Area light sampling for quad surfaces.</p>
-							<img class="photo"  src="img/graphics/quads.png"></img>
-							<h3>Sphere Lights</h3>
-							<p>Spherical light sampling for sphere surface. </p>
-							<img class="photo"  src="img/graphics/spheres.png"></img>
-							<h3>Environmental Illumination</h3>
-							<p>Environment lighting by mapping environment and sampling the BRDF</p>
-							<img class="photo"  src="img/graphics/enviros.png"></img>
-							<h3>Indirect Lighting</h3>
-							<p>Recursive path tracing of rays and stops at a max depth.</p>
-							<img class="photo"  src="img/graphics/indirects.png"></img>
-							<h3>Microfacet Materials</h3>
-							<p>Microfacet modification to Blinn-Phong illumination for improved materials</p>
-							<img class="photo"  src="img/graphics/micros.png"></img>
-							<h3>Depth of Field</h3>
-							<p>Depth of field blurring over the lens of the camera using Monte Carlo sampling </p>
-							<img class="photo"  src="img/graphics/depths.png"></img>
-						</div>
-
-							<pre>insert raytrace code maaybe monte carlo</pre>
-					</span>
+									<div class="lightbox"><img src="img/graphics/depth3.jpg" />
 									</div>
 								</a>
 							</div>
 
 							<!--Animations-->
 							<div class="col-md-4 text-center">
-								<a class="thumbnail gallery" href="#first">
+								<a class="thumbnail gallery" href="projects/animations.html" data-featherlight="ajax">
 									<h2>Animations</h2>
-									<div id="first" class="blurb">
-										<p class="lightbox"><img src="img/animationThumb.jpg" /></p>
-										<span class="detail ">
-							<div class="text-center">
-								<h2>Animations</h2>
-							<br>
-							<h3>Design: Maya, Adobe AfterEffects, iMovie <h3>
-							</div>
-							<br>
-							<p>A collection of different animation projects</p>
-							<div class="text-center">
-									<div class="youtube-container">
-												<div class="youtube-player video" data-id="9eDipSmiZvk"></div>
-												<div class="youtube-player video" data-id="Z3-GNHi3q7E"></div>
-												<div class="youtube-player video" data-id="Zl9sVhVJ7oc"></div>
-												<div class="youtube-player video" data-id="gHyhPMXSPEw"></div>
-									</div>
-							</div>
-					</span>
+									<div class="lightbox"><img src="img/animationThumb.jpg" />
 									</div>
 								</a>
 							</div>
 
+						</div>
 					</div>
 				</div>
 			</div>
@@ -746,13 +343,13 @@
 			<div class="container">
 
 				<div class="row footerlinks">
-						<div class="text-center">
-							<img class="logo" src="img/logo/logoMedDk.png">
-							</a>
-						</div>
+					<div class="text-center">
+						<img class="logo" src="img/logo/logoMedDk.png">
+						</a>
 					</div>
-
 				</div>
+
+			</div>
 		</footer>
 	</section>
 	<!--SCRIPTS-->
