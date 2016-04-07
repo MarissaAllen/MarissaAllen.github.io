@@ -1,4 +1,4 @@
-html, button, input, select, textarea {
+  html, button, input, select, textarea {
   color: #222;
 }
 
@@ -82,7 +82,6 @@ section {
   -moz-transition: opacity 300ms ease-out;
   transition: opacity 300ms ease-out;
 }
-
 main {
   overflow-x: hidden;
 }
@@ -300,13 +299,13 @@ a:hover {
    Youtube
    ========================================================================== */
 
-.detail .youtube-container {
+.youtube-container {
   display: block;
   margin: 20px auto;
   width: 100%;
   max-width: 600px;
 }
-.detail .youtube-player {
+.youtube-player {
   display: block;
   width: 100%;
   /* assuming that the video has a 16:9 ratio */
@@ -346,95 +345,64 @@ div.play-button {
    Featherlight Gallery Lightbox
    ========================================================================== */
 
-.fl-page h1 {
-  font-size: 110px;
-  margin-bottom: 0.5em;
-}
-.fl-page h1 span {
-  font-size: 30px;
-  color: #333;
-}
-.fl-page h3 {
-  text-align: right;
-  font-size: 15px;
-}
-.fl-page h4 {
-  font-size: 2em;
-}
-.fl-page .jumbotron {
-  margin-top: 2em;
-}
-.fl-page .row {
-  margin-top: 2em;
-}
-
-/* customized gallery */
-
-.featherlight-gallery {
-  background: rgba(100, 100, 100, 0.5);
-}
-.featherlight-gallery .featherlight-content {
-  background: rgb(255, 255, 255);
-}
-.featherlight-gallery .featherlight-next:hover, .featherlight-gallery .featherlight-previous:hover {
-  background: rgba(0, 0, 0, 0.5);
-}
-.featherlight-gallery .featherlight-next:hover span, .featherlight-gallery .featherlight-previous:hover span {
-  font-size: 25px;
-  line-height: 25px;
-  margin-top: -12.5px;
-  color: #fff;
-}
-.featherlight-gallery .featherlight-close {
-  background: transparent;
-  color: black;
-  font-size: 1.2em;
-}
-.gallery h2 {
-  font-size: 20px;
-  margin-top: 10px;
-}
-
-/* text slide */
-
-.thumbnail a {
-  text-decoration: none;
-}
-a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
-  border-color: rgb(74, 98, 116);
-}
-.blurb {
-  display: inline-block;
-  width: auto;
-  height: auto;
-}
-.blurb h2 {
-  text-align: center;
-  font-size: 40px;
-}
-.blurb .detail {
-  display: none;
-}
-.blurb .lightbox {
-  text-align: center;
-}
-.featherlight .blurb {
-  display: inline-block;
-  width: 70vw;
-  height: auto;
-  color: rgb(34, 34, 34);
-}
-.featherlight .blurb .detail {
-  color: rgb(34, 34, 34);
-  font-size: inherit;
-  display: inherit;
-  width: inherit;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-.featherlight .blurb .lightbox, .featherlight .blurb .lightbox a {
-  display: none;
-}
+@media all {
+  .lightbox {
+    display: none;
+  }
+  .fl-page h1, .fl-page h3, .fl-page h4 {
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+  .fl-page h1 {
+    font-size: 110px;
+    margin-bottom: 0.5em;
+  }
+  .fl-page h1 i {
+    font-style: normal;
+    color: #ddd;
+  }
+  .fl-page h1 span {
+    font-size: 30px;
+    color: #333;
+  }
+  .fl-page h3 {
+    text-align: right;
+  }
+  .fl-page h3 {
+    font-size: 15px;
+  }
+  .fl-page h4 {
+    font-size: 2em;
+  }
+  .fl-page .row {
+    margin-top: 2em;
+  }
+  /* customized gallery */
+  .featherlight-gallery .featherlight-next:hover, .featherlight-gallery .featherlight-previous:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .featherlight-gallery2 .featherlight-next:hover span, .featherlight-gallery2 .featherlight-previous:hover span {
+    font-size: 25px;
+    line-height: 25px;
+    margin-top: -12.5px;
+    color: #fff;
+  }
+  .featherlight-gallery2 .featherlight-close {
+    background: transparent;
+    color: #fff;
+    font-size: 1.2em;
+  }
+  .featherlight-gallery.featherlight-last-slide .featherlight-next, .featherlight-gallery.featherlight-first-slide .featherlight-previous {
+    display: none;
+  }
+  /* text slide */
+  .thumbnail a {
+    text-decoration: none;
+  }
+  a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
+    border-color: rgb(74, 98, 116);
+  }
+  /*
 .featherlight-previous {
   display: block;
   position: absolute;
@@ -451,26 +419,31 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
   left: 95%;
   height: 80vw;
   min-width: 30px;
-}
-.lightbox img {
-  max-height: 150px;
-  height: 10vw;
-  min-height: 130px;
-}
-.detail .photo {
-  max-width: 50vw;
-  min-width: 200px;
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-.detail .small-photo {
-  max-width: 30vw;
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-.detail .video {
-  width: 40vw;
-  height: 25vw;
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
+}*/
+  /*////////////////////////////////////////*/
+  .thumbnail h2 {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .thumbnail img {
+    max-height: 150px;
+    height: 10vw;
+    min-height: 130px;
+  }
+  .detail .photo {
+    max-width: 50vw;
+    min-width: 200px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .detail .small-photo {
+    max-width: 30vw;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .detail .video {
+    width: 40vw;
+    height: 25vw;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }

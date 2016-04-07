@@ -1,60 +1,40 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<!-- loads a google font -->
-	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700'>
-	<!-- loads bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-	<!-- loads css -->
-	<link type="text/css" rel="stylesheet" href="css/vendor/featherlight.min.css" />
-	<link type="text/css" rel="stylesheet" href="css/vendor/featherlight.gallery.min.css" />
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/h5bp.css">
-	<link rel="stylesheet" href="/highlight/styles/obsidian.css">
-	<script src="/highlight/highlight.pack.js"></script>
-	<!--call code highlighting-->
-	<script>
-		hljs.initHighlightingOnLoad();
-	</script>
+<head></head>
 
-
-
-</head>
-
-<body>
+<body class="fl-page">
 	<main>
 
-											<div class="text-center">
-												<h2>MS Thesis </h2>
-												<br>
-												<h3>iPad app: Swift, Scenekit, CocoaPods</h3>
-												<img class="photo" src="img/thesis/foldlings_header.jpg"></img>
-											</div>
-											<!-- Explain/Brief Description -->
-											<p>Foldlings was a joint project where we created interative 3D pop-up card design app. The user sketchs a 2D design and our iPad app converts that design into a 3D representation in kirigami pop-up form. For this project I was responsible for
-												transforming the 2D shapes drawn by the user into 3D planes, rendering the interactive 3D simulation, and creating the svg file to send to a laser cutter. You can read more here.
-											</p>
-											<div class="text-center">
-												<img class="small-photo" src="img/thesis/thesis.gif"></img>
-											</div>
-											<!-- Explain the problem, then describe the solution-->
-											<p>To create 3D plane objects from user's sketch, we reduce the sketch into edges and created a Swift method to follow those edges forming planes using the Polygon Walk method. Those planes are then linked together into an acyclic graph which
-												defines how each plane behaves in the 3D simulation. After the user is satisfied with their card, they can create an svg file to send to a laser cutter and have the physical card in seconds. Full code here.
-											</p>
-											<div class="text-center">
-												<h3>The Process</h3>
-												<img class="photo" src="img/thesis/fullpipeline.jpg"></img>
-												<img class="photo" src="img/thesis/sinewaveex.jpg"></img>
-											</div>
-											<h3>The GetPlanes Method:</h3>
-											<p>This Swift method creates Plane objects that are passed to Scenekit to become 3-D planes from 2-D Edge objects by using the Polygon Walk method. This function iterates through all the edges connecting endpoints to startpoints until it forms
-												a closed shape. There are many constraints including whether the edge has been previously visited or if the shape created is just a line. The function also sets certain attributes of the newly created Plane object such as the number of folds
-												and the top and bottom edges.
-											</p>
+		<div class="text-center detail">
+			<h2>MS Thesis </h2>
+			<br>
+			<h3>iPad app: Swift, Scenekit, CocoaPods</h3>
+			<img class="photo" src="img/thesis/foldlings_header.jpg"></img>
+		</div>
+		<!-- Explain/Brief Description -->
+		<p>Foldlings was a joint project where we created interative 3D pop-up card design app. The user sketchs a 2D design and our iPad app converts that design into a 3D representation in kirigami pop-up form. For this project I was responsible for transforming
+			the 2D shapes drawn by the user into 3D planes, rendering the interactive 3D simulation, and creating the svg file to send to a laser cutter. You can read more here.
+		</p>
+		<div class="text-center detail">
+			<img class="small-photo" src="img/thesis/thesis.gif"></img>
+		</div>
+		<!-- Explain the problem, then describe the solution-->
+		<p>To create 3D plane objects from user's sketch, we reduce the sketch into edges and created a Swift method to follow those edges forming planes using the Polygon Walk method. Those planes are then linked together into an acyclic graph which defines how
+			each plane behaves in the 3D simulation. After the user is satisfied with their card, they can create an svg file to send to a laser cutter and have the physical card in seconds. Full code here.
+		</p>
+		<div class="text-center detail">
+			<h3>The Process</h3>
+			<img class="photo" src="img/thesis/fullpipeline.jpg"></img>
+			<img class="photo" src="img/thesis/sinewaveex.jpg"></img>
+		</div>
+		<h3>The GetPlanes Method:</h3>
+		<p>This Swift method creates Plane objects that are passed to Scenekit to become 3-D planes from 2-D Edge objects by using the Polygon Walk method. This function iterates through all the edges connecting endpoints to startpoints until it forms a closed
+			shape. There are many constraints including whether the edge has been previously visited or if the shape created is just a line. The function also sets certain attributes of the newly created Plane object such as the number of folds and the top and
+			bottom edges.
+		</p>
 
-											<pre>
+		<pre>
 												<code>
 // does a traversal of all the edges to find all the planes
     func getPlanes(){
@@ -134,24 +114,10 @@
 	</code>
 </pre>
 
+		<script>
+			hljs.initHighlightingOnLoad();
+		</script>
 	</main>
-
-	<!--SCRIPTS-->
-
-	<!-- load some vendor js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="js/vendor/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/vendor/featherlight.gallery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/vendor/imagesloaded.js"></script>
-	<script src="js/vendor/skrollr.js"></script>
-
-	<!-- load my js -->
-	<script src="js/main.js"></script>
-
-
-
 </body>
 
 </html>

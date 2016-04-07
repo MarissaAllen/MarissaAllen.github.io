@@ -1,86 +1,78 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<!-- loads a google font -->
-	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700'>
-	<!-- loads bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-	<!-- loads css -->
-	<link type="text/css" rel="stylesheet" href="css/vendor/featherlight.min.css" />
-	<link type="text/css" rel="stylesheet" href="css/vendor/featherlight.gallery.min.css" />
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/h5bp.css">
-	<link rel="stylesheet" href="/highlight/styles/obsidian.css">
-	<script src="/highlight/highlight.pack.js"></script>
-	<!--call code highlighting-->
-	<script>
-		hljs.initHighlightingOnLoad();
-	</script>
+<head></head>
 
+<body class="fl-page">
+	<main>
 
-
-</head>
-
-<body>
-							<div class="text-center">
-								<h2>Animated Linkages </h2>
-							<br>
-							<h3>Development: Matlab<h3>
+	<div class="text-center detail">
+		<h2>Animated Linkages </h2>
+		<br>
+		<h3>Development: Matlab<h3>
 							<img class="photo" src="img/linkages.jpg"></img>
 							</div>
 							<br>
-							<div class="text-center">
+							<div class="text-center detail">
 							<h3>link1</h3>
-							<div class="youtube-container">
-								<div class="youtube-player video" data-id="UxRdvX7KnQs"></div>
-								<br>
-								<h3>link2</h3>
-								<div class="youtube-player video" data-id="FgPqvrWiUfk"></div>
-								<br>
-								<h3>link3</h3>
-								<div class="youtube-player video" data-id="mXTEQHz8CZE"></div>
-								<br>
-								<h3>link4</h3>
-								<div class="youtube-player video" data-id="GvuTo3QeSjg"></div>
-								<br>
-								<h3>Klann</h3>
-								<div class="youtube-player video" data-id="_hH5ih2ocEA"></div>
-								<br>
-							</div>
-						</div>
+		<div class="youtube-container">
+			<div class="youtube-player video" data-id="UxRdvX7KnQs"></div>
+			<br>
+			<h3>link2</h3>
+			<div class="youtube-player video" data-id="FgPqvrWiUfk"></div>
+			<br>
+			<h3>link3</h3>
+			<div class="youtube-player video" data-id="mXTEQHz8CZE"></div>
+			<br>
+			<h3>link4</h3>
+			<div class="youtube-player video" data-id="GvuTo3QeSjg"></div>
+			<br>
+			<h3>Klann</h3>
+			<div class="youtube-player video" data-id="_hH5ih2ocEA"></div>
+			<br>
+		</div>
+	</div>
 
-							<p>This project was a continuation of study about linkage constraints based on this paper. One demonstration is a
-							man pushing a load. These models were recreated on thingiverse. I printed and assembled my own model (not shown)
-						and then recreated the behavior in previous moving links framework in matlab. Here is a demostration of the desired
-					behavior.</p>
-					<div class="text-center">
-					<div class="youtube-container">
-									<div class="youtube-player video" data-id="sbmPax3fRTc"></div>
-								<p> Here is the result from the code:</p>
-									<div class="youtube-player video" data-id="RvdW4RXQsMg"></div>
-								</div>
-							</div>
+	<p>This project was a continuation of study about linkage constraints based on this paper. One demonstration is a man pushing a load. These models were recreated on thingiverse. I printed and assembled my own model (not shown) and then recreated the behavior
+		in previous moving links framework in matlab. Here is a demostration of the desired behavior.
+	</p>
+	<div class="text-center detail">
+		<div class="youtube-container">
+			<div class="youtube-player video" data-id="sbmPax3fRTc"></div>
+			<p> Here is the result from the code:</p>
+			<div class="youtube-player video" data-id="RvdW4RXQsMg"></div>
+		</div>
+	</div>
+
+	<script>
+		hljs.initHighlightingOnLoad();
+		</script>
+		
+		<script>
+		$(document).ready(function() {
+			var v = document.getElementsByClassName("youtube-player");
+			for (var n = 0; n < v.length; n++) {
+				var p = document.createElement("div");
+				p.innerHTML = labnolThumb(v[n].dataset.id);
+				p.onclick = labnolIframe;
+				v[n].appendChild(p);
+			}
 
 
+			function labnolThumb(id) {
+				return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
+			}
+
+			function labnolIframe() {
+				var iframe = document.createElement("iframe");
+				iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&controls=0&showinfo=0");
+				iframe.setAttribute("frameborder", "0");
+				iframe.setAttribute("id", "youtube-iframe");
+				this.parentNode.replaceChild(iframe, this);
+			}
+		});
+	</script>
 	</main>
-
-	<!--SCRIPTS-->
-
-	<!-- load some vendor js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="js/vendor/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/vendor/featherlight.gallery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/vendor/imagesloaded.js"></script>
-	<script src="js/vendor/skrollr.js"></script>
-
-	<!-- load my js -->
-	<script src="js/main.js"></script>
-
-
 </body>
 
 </html>
