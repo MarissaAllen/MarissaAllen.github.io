@@ -54,7 +54,8 @@ h1 {
   padding-top: 100px;
   z-index: 2;
 }
-h4, h5 {
+
+h5 {
   /*color: rgb(128, 26, 38);*/
   /*color: rgb(12, 75, 82);*/
   /*color: rgb(91, 107, 119);*/
@@ -107,7 +108,11 @@ header {
   width: 100%;
   z-index: 80;
 }
-
+.big{
+  color: rgb(57, 87, 96);
+  /*color: rgb(91, 107, 119);*/
+  font-size: 3.0em;
+}
 /* navbar*/
 
 .navbar {
@@ -143,8 +148,10 @@ header {
   text-decoration: none;
 }
 a {
-  /*color: rgb(57, 87, 96);*/
-  color: rgb(91, 107, 119);
+  color: rgb(57, 87, 96);
+  /*color: rgb(91, 107, 119);*/
+  font-weight: 600;
+
 }
 a:hover {
   text-decoration: none;
@@ -165,6 +172,7 @@ a:hover {
 .navbar-toggle .icon-bar+.icon-bar {
   margin-top: 3px;
 }
+
 
 /* bit of padding in the main content containers */
 
@@ -243,15 +251,16 @@ a:hover {
 }
 .profile img {
   width: 250px;
+  margin: 40px;
 }
 .level img {
   /*padding-left: 20px;*/
   width: 90px;
   /*margin-right: 90px;*/
 }
-.accent img {
+/*.accent img {
   width: 60px;
-}
+}*/
 .logo img {
   width: 350px;
   margin-left: 0px;
@@ -259,7 +268,18 @@ a:hover {
   z-index: 80;
   /*padding-bottom: 20px;*/
 }
-
+.apps{
+width: 275px;
+}
+.lang{
+width: 230px;
+}
+.edu{
+max-width: 695px;
+}
+.h-center{
+margin: auto;
+}
 /* Cover 0*/
 
 #cover-0 .baselayer {
@@ -391,6 +411,9 @@ div.play-button {
     background: transparent;
     color: #fff;
     font-size: 1.2em;
+  }
+  .featherlight .featherlight-close-icon {
+    position: fixed;
   }
   .featherlight-gallery.featherlight-last-slide .featherlight-next, .featherlight-gallery.featherlight-first-slide .featherlight-previous {
     display: none;

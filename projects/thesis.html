@@ -7,21 +7,30 @@
 	<main>
 
 		<div class="text-center detail">
-			<h2>MS Thesis </h2>
+			<h2>Foldlings (MS Thesis)</h2>
 			<br>
 			<h3>iPad app: Swift, Scenekit, CocoaPods</h3>
 			<img class="photo" src="img/thesis/foldlings_header.jpg"></img>
 		</div>
 		<!-- Explain/Brief Description -->
-		<p>Foldlings was a joint project where we created interative 3D pop-up card design app. The user sketchs a 2D design and our iPad app converts that design into a 3D representation in kirigami pop-up form. For this project I was responsible for transforming
-			the 2D shapes drawn by the user into 3D planes, rendering the interactive 3D simulation, and creating the svg file to send to a laser cutter. You can read more here.
+		<p>Foldlings was a joint project where my partner and I created an interactive
+			3D pop-up card design app. The user sketches a 2D design and our iPad app
+			converts that design into a 3D representation in kirigami pop-up form. For
+			this project I was responsible for transforming the 2D shapes drawn by the
+			user into 3D planes, rendering the interactive 3D simulation, and creating
+			the svg file to send to a laser cutter. You can read more here.
 		</p>
 		<div class="text-center detail">
 			<img class="small-photo" src="img/thesis/thesis.gif"></img>
 		</div>
-		<!-- Explain the problem, then describe the solution-->
-		<p>To create 3D plane objects from user's sketch, we reduce the sketch into edges and created a Swift method to follow those edges forming planes using the Polygon Walk method. Those planes are then linked together into an acyclic graph which defines how
-			each plane behaves in the 3D simulation. After the user is satisfied with their card, they can create an svg file to send to a laser cutter and have the physical card in seconds. Full code here.
+		<!-- Problem, then solution-->
+		<p>To create 3D plane objects from user's sketch, we reduce the sketch into
+			edges and created a Swift method to follow those edges forming planes
+			using the Polygon Walk method. Those planes are then linked together into
+			an acyclic graph which defines how each plane behaves in the 3D simulation.
+			After the user is satisfied with their card, they can create an svg file
+			to send to a laser cutter and have the physical card in seconds. Full code here.
+
 		</p>
 		<div class="text-center detail">
 			<h3>The Process</h3>
@@ -29,8 +38,13 @@
 			<img class="photo" src="img/thesis/sinewaveex.jpg"></img>
 		</div>
 		<h3>The GetPlanes Method:</h3>
-		<p>This Swift method creates Plane objects that are passed to Scenekit to become 3-D planes from 2-D Edge objects by using the Polygon Walk method. This function iterates through all the edges connecting endpoints to startpoints until it forms a closed
-			shape. There are many constraints including whether the edge has been previously visited or if the shape created is just a line. The function also sets certain attributes of the newly created Plane object such as the number of folds and the top and
+		<p>This Swift method creates Plane objects that are passed to Scenekit to
+			become 3-D planes from 2-D Edge objects by using the Polygon Walk method.
+			This function iterates through all the edges connecting endpoints to
+			startpoints until it forms a closed shape. There are many constraints
+			including whether the edge has been previously visited or if the shape
+			created is just a line. The function also sets certain attributes of the
+			newly created Plane object such as the number of folds and the top and
 			bottom edges.
 		</p>
 
