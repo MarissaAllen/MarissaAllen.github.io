@@ -397,27 +397,16 @@ div.play-button {
   .fl-page .row {
     margin-top: 2em;
   }
-  /* customized gallery */
-  .featherlight-gallery .featherlight-next:hover, .featherlight-gallery .featherlight-previous:hover {
-    background: rgba(0, 0, 0, 0.5);
-  }
-  .featherlight-gallery2 .featherlight-next:hover span, .featherlight-gallery2 .featherlight-previous:hover span {
-    font-size: 25px;
-    line-height: 25px;
-    margin-top: -12.5px;
-    color: #fff;
-  }
-  .featherlight-gallery2 .featherlight-close {
-    background: transparent;
-    color: #fff;
-    font-size: 1.2em;
+  .featherlight .featherlight-content {
+    width: 80vw;
   }
   .featherlight .featherlight-close-icon {
     position: fixed;
-  }
-  .featherlight-gallery.featherlight-last-slide .featherlight-next, .featherlight-gallery.featherlight-first-slide .featherlight-previous {
-    display: none;
-  }
+    line-height: 40px;
+    width: 40px;
+    font-size: 2.0em;
+    }
+
   /* text slide */
   .thumbnail a {
     text-decoration: none;
@@ -425,24 +414,10 @@ div.play-button {
   a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
     border-color: rgb(74, 98, 116);
   }
-  /*
-.featherlight-previous {
-  display: block;
-  position: absolute;
-  top: 30px;
-  left: 0px;
-  right: 95%;
-  height: 80vw;
+
+.featherlight-previous, .featherlight-next {
+  display: none;
 }
-.featherlight-next {
-  display: block;
-  position: absolute;
-  top: 30px;
-  right: 0px;
-  left: 95%;
-  height: 80vw;
-  min-width: 30px;
-}*/
   /*////////////////////////////////////////*/
   .thumbnail h2 {
     font-size: 20px;
@@ -452,6 +427,7 @@ div.play-button {
     max-height: 150px;
     height: 10vw;
     min-height: 130px;
+    margin-bottom: 14px;
   }
   .detail .photo {
     max-width: 50vw;
