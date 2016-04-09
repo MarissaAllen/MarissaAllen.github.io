@@ -321,15 +321,12 @@ margin: auto;
 
 .youtube-container {
   display: block;
-  margin: 20px auto;
-  width: 100%;
-  max-width: 600px;
+  max-width: 40vw;
+  margin: auto;
 }
 .youtube-player {
   display: block;
   width: 100%;
-  /* assuming that the video has a 16:9 ratio */
-  /*padding-bottom: 56.25%;*/
   overflow: hidden;
   position: relative;
   width: 40vw;
@@ -360,7 +357,11 @@ div.play-button {
   position: absolute;
   background: url("http://i.imgur.com/TxzC70f.png") no-repeat;
 }
-
+.detail .video {
+  width: 40vw;
+  height: 25vw;
+  margin-bottom: 30px;
+}
 /* ==========================================================================
    Featherlight Gallery Lightbox
    ========================================================================== */
@@ -437,12 +438,6 @@ div.play-button {
   }
   .detail .small-photo {
     max-width: 30vw;
-    margin-bottom: 30px;
-    margin-top: 30px;
-  }
-  .detail .video {
-    width: 40vw;
-    height: 25vw;
     margin-bottom: 30px;
     margin-top: 30px;
   }
