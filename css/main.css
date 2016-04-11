@@ -54,12 +54,15 @@ h1 {
   padding-top: 100px;
   z-index: 2;
 }
-
+h3{
+  text-decoration: underline;
+}
 h5 {
   /*color: rgb(128, 26, 38);*/
   /*color: rgb(12, 75, 82);*/
   /*color: rgb(91, 107, 119);*/
-  color: rgb(74, 98, 116);
+  color: rgb(57, 87, 96);
+  /*color: rgb(74, 98, 116);*/
 }
 p {
   line-height: 160%;
@@ -401,6 +404,14 @@ div.play-button {
   .featherlight .featherlight-content {
     width: 80vw;
   }
+
+.featherlight .featherlight-inner {
+    display: block;
+    width: 65vw;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
   .featherlight .featherlight-close-icon {
     position: fixed;
     line-height: 40px;
@@ -440,4 +451,12 @@ div.play-button {
     max-width: 30vw;
     margin-bottom: 30px;
     margin-top: 30px;
+  }
+  .detail h2{
+font-size: 40px;
+  }
+  .detail h2 + h3{
+    color: rgb(57, 87, 96);
+    text-decoration: none;
+    font-weight: 400;
   }
