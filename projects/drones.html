@@ -5,54 +5,50 @@
 
 <body class="fl-page">
 	<main>
-							<!--Drones-->
+		<!--Drones-->
 
-							<div class="text-center detail">
-								<h2>Flying Drones </h2>
-							<h3>Development: C </h3>
-						</div>
+		<div class="text-center detail">
+			<h2>Flying Drones </h2>
+			<h3>Development: C </h3>
 
-							<p>For this project, I programmed CrazyFly drones to be controlled through the LEAP Controller. </p>
-							<div class="text-center detail">
+		<p>In my Software Design and Implementation class, for our final project, I programmed CrazyFly drones to be controlled through the LEAP Controller. </p>
 
-								<img class="photo" src="img/drones/fliers.jpg"></img>
-								<p>I was in charge of the state machine that directed the flier
-									which paired certain hand motions with drone maneuvers.</p>
-								<div class="youtube-container">
-									<div class="youtube-player video" data-id="51mRWMtoc84"></div>
-								</div>
-							</div>
-							<br>
-							<pre>$(document).ready(function(){$('.gallery').featherlightGallery();});</pre>
+			<img class="photo" src="img/drones/fliers.jpg"></img>
+			<p>I was in charge of the state machine that directed the flier which paired certain hand motions with drone maneuvers.
+			Here is a video of me flying the drone with my hand.</p>
+			<div class="youtube-container">
+				<div class="youtube-player video" data-id="51mRWMtoc84"></div>
+			</div>
+		</div>
 
-							<script>
-								hljs.initHighlightingOnLoad();
-							</script>
-							<!--SCRIPTS-->
-							<script>
-							$(document).ready(function() {
-							var v = document.getElementsByClassName("youtube-player");
-							for (var n = 0; n < v.length; n++) {
-								var p = document.createElement("div");
-								p.innerHTML = labnolThumb(v[n].dataset.id);
-								p.onclick = labnolIframe;
-								v[n].appendChild(p);
-							}
+		<script>
+			hljs.initHighlightingOnLoad();
+		</script>
+		<!--SCRIPTS-->
+		<script>
+			$(document).ready(function() {
+				var v = document.getElementsByClassName("youtube-player");
+				for (var n = 0; n < v.length; n++) {
+					var p = document.createElement("div");
+					p.innerHTML = labnolThumb(v[n].dataset.id);
+					p.onclick = labnolIframe;
+					v[n].appendChild(p);
+				}
 
-							function labnolThumb(id) {
-								return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
-							}
+				function labnolThumb(id) {
+					return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
+				}
 
-							function labnolIframe() {
-								var iframe = document.createElement("iframe");
-								iframe.setAttribute("class", "video");
-								iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&rel=0&amp&showinfo=0");
-								iframe.setAttribute("frameborder", "0");
-								iframe.setAttribute("id", "youtube-iframe");
-								this.parentNode.replaceChild(iframe, this);
-							}
-						});
-							</script>
+				function labnolIframe() {
+					var iframe = document.createElement("iframe");
+					iframe.setAttribute("class", "video");
+					iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&rel=0&amp&showinfo=0");
+					iframe.setAttribute("frameborder", "0");
+					iframe.setAttribute("id", "youtube-iframe");
+					this.parentNode.replaceChild(iframe, this);
+				}
+			});
+		</script>
 	</main>
 </body>
 
