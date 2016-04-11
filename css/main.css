@@ -460,3 +460,6 @@ font-size: 40px;
     text-decoration: none;
     font-weight: 400;
   }
+.detail p{
+  text-align: left;
+}
