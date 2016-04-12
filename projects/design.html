@@ -6,75 +6,70 @@
 <body class="fl-page">
 	<main>
 
-							<!--Design-->
+		<!--Design-->
 
-							<div class="text-center detail">
-								<h2>Design Gallery </h2>
-							<h3>Design: Adobe Photoshop </h3>
-							<br>
-							<p>A collection of different designs ranging from print to web-design mockups</p>
-							<br>
-								<h3>Logo Project</h3>
-								<p>For this project, the assignment was to partner up with someone and create a personal logo for them.
-								I was partnered with the a very happy, bubbly girl named Kiko and this her logo. </p>
-								<img class="photo" src="img/design/KikoLogo.jpg"></img>
-								<h3>Expressive Shapes</h3>
-								<p>For this project, we were given words and a toolkit to create designs to embody these expressions.</p>
-								<img class="photo" src="img/design/ExpressiveShapes.jpg"></img>
-								<img class="photo" src="img/design/designStyles.jpg"></img>
-								<br>
-								<h3>Poster Design</h3>
-								<p>For this project, we designed these posters given only the words and content.</p>
-								<img class="photo" src="img/design/design_quote.jpg"></img>
-								<img class="photo" src="img/design/posterAfter.jpg"></img>
-								<h3>Web Design</h3>
-								<p>The first three web designs were an exploration of how color can influence the feel of a webpage.
-								The last, is a mock-up of a web-page based on the given title and content.</p>
-									<img class="photo" src="img/design/gardenTeas.jpg"></img>
-									<img class="photo" src="img/design/S&kDesigns.jpg"></img>
-									<img class="photo" src="img/design/Sk8rDecks.jpg"></img>
-									<img class="photo" src="img/design/pageSpread.jpg"></img>
-								<br>
-								<h3>UI Design</h3>
-								<p>The goal of this project was to create an touchscreen interface for a guest at Sandals Resort.
-									This design had to allow the guest to see all of Sandals events, plan itineraries, and
-									view their schedule.</p>
-								<img class="photo" src="img/design/UIproject.jpg"></img>
-								<img class="photo" src="img/design/WorkflowUI.jpg"></img>
-								<br>
-								<h3>Video Project</h3>
-								<p>This project was to create a video montage using AfterEffects. I found some great (free) videos
-									on the NASA website, so I decided to go with a space theme.</p>
-									<div class="youtube-container">
-										<div class="youtube-player video" data-id="V_FD4kHQPuA"></div>
-									</div>
-							</div>
+		<div class="text-center detail">
+			<h2>Design Gallery </h2>
+			<h3>Design: Adobe Photoshop </h3>
+			<br>
+			<p>A collection of different designs ranging from print to web-design mockups</p>
+			<br>
+			<h3>Logo Project</h3>
+			<p>For this project, the assignment was to partner up with someone and create a personal logo for them. I was partnered with the a very happy, bubbly girl named Kiko and this her logo. </p>
+			<img class="photo" src="img/design/KikoLogo.jpg"></img>
+			<h3>Expressive Shapes</h3>
+			<p>For this project, we were given words and a toolkit to create designs to embody these expressions.</p>
+			<img class="photo" src="img/design/ExpressiveShapes.jpg"></img>
+			<img class="photo" src="img/design/designStyles.jpg"></img>
+			<br>
+			<h3>Poster Design</h3>
+			<p>For this project, we designed these posters given only the words and content.</p>
+			<img class="photo" src="img/design/design_quote.jpg"></img>
+			<img class="photo" src="img/design/posterAfter.jpg"></img>
+			<h3>Web Design</h3>
+			<p>The first three web designs were an exploration of how color can influence the feel of a webpage. The last, is a mock-up of a web-page based on the given title and content.</p>
+			<img class="photo" src="img/design/gardenTeas.jpg"></img>
+			<img class="photo" src="img/design/S&kDesigns.jpg"></img>
+			<img class="photo" src="img/design/Sk8rDecks.jpg"></img>
+			<img class="photo" src="img/design/pageSpread.jpg"></img>
+			<br>
+			<h3>UI Design</h3>
+			<p>The goal of this project was to create an touchscreen interface for a guest at Sandals Resort. This design had to allow the guest to see all of Sandals events, plan itineraries, and view their schedule.</p>
+			<img class="photo" src="img/design/UIproject.jpg"></img>
+			<img class="photo" src="img/design/WorkflowUI.jpg"></img>
+			<br>
+			<h3>Video Project</h3>
+			<p>This project was to create a video montage using AfterEffects. I found some great (free) videos on the NASA website, so I decided to go with a space theme.</p>
+			<div class="youtube-container">
+				<div class="youtube-player video" data-id="V_FD4kHQPuA"></div>
+			</div>
+		</div>
 
-							<!--SCRIPTS-->
-							<script>
-							$(document).ready(function() {
-							var v = document.getElementsByClassName("youtube-player");
-							for (var n = 0; n < v.length; n++) {
-								var p = document.createElement("div");
-								p.innerHTML = labnolThumb(v[n].dataset.id);
-								p.onclick = labnolIframe;
-								v[n].appendChild(p);
-							}
+		<!--SCRIPTS-->
+		<script>
+			$(document).ready(function() {
+				var v = document.getElementsByClassName("youtube-player");
+				for (var n = 0; n < v.length; n++) {
+					var p = document.createElement("div");
+					p.innerHTML = labnolThumb(v[n].dataset.id);
+					p.onclick = labnolIframe;
+					v[n].appendChild(p);
+				}
 
-							function labnolThumb(id) {
-								return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
-							}
+				function labnolThumb(id) {
+					return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
+				}
 
-							function labnolIframe() {
-								var iframe = document.createElement("iframe");
-								iframe.setAttribute("class", "video");
-								iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&rel=0&amp&showinfo=0");
-								iframe.setAttribute("frameborder", "0");
-								iframe.setAttribute("id", "youtube-iframe");
-								this.parentNode.replaceChild(iframe, this);
-							}
-						});
-							</script>
+				function labnolIframe() {
+					var iframe = document.createElement("iframe");
+					iframe.setAttribute("class", "video");
+					iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&rel=0&amp&showinfo=0");
+					iframe.setAttribute("frameborder", "0");
+					iframe.setAttribute("id", "youtube-iframe");
+					this.parentNode.replaceChild(iframe, this);
+				}
+			});
+		</script>
 	</main>
 
 </body>
