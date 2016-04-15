@@ -66,4 +66,8 @@
     variant: 'featherlight-gallery'
   });
 
+  //highlight
+  hljs.initHighlightingOnLoad();
+
+
 })(jQuery);
