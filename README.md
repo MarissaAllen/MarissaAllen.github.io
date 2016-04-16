@@ -65,8 +65,8 @@ Now that you've resolved any conflicts you're ready to push to the remote reposi
  ```gh-pages``` is the branch you are pushing. Using the ```gh-pages``` branch lets github know that you would like this code hosted as a static website.
 
 ###Done!
-[http://marissaallen.github.io/portfolio-site](http://marissaallen.github.io/portfolio-site)
-<br>[http://marissa-web.surge.sh](http://marissa-web.surge.sh)
+<!-- [http://marissaallen.github.io/portfolio-site](http://marissaallen.github.io/portfolio-site) -->
+<br>[http://marissaallen.space](http://marissaallen.space)
 
 
 
