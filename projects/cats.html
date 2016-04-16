@@ -2,7 +2,7 @@
 <html>
 <head></head>
 
-<body class="fl-page">
+<body class="fl-page loading">
 	<main>
 			<!---Giphy Cats -->
 			<div class="text-center detail">
@@ -19,5 +19,21 @@
 		Progress can be track at <a href="https://github.com/MarissaAllen/CatStressApp">this repo.</a></p>
 	</main>
 </body>
+<script>
+	$(document).ready(function() {
+				$body = $('body');
+				//FadeIn all sections
+				$body.imagesLoaded(function() {
+					setTimeout(function() {
 
+						// Resize sections
+						adjustWindow();
+
+						// Fade in sections
+						$body.removeClass('loading').addClass('loaded');
+
+					}, 800);
+				});
+				});
+</script>
 </html>

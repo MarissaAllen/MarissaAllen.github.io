@@ -13,9 +13,20 @@
       adjustWindow();
       // Fade in sections
       $body.removeClass('loading').addClass('loaded');
-    }, 10);
+    }, 800);
   });
-
+//   //FadeIn all sections
+// $body.imagesLoaded( function() {
+//   setTimeout(function() {
+//
+//         // Resize sections
+//         adjustWindow();
+//
+//         // Fade in sections
+//       $body.removeClass('loading').addClass('loaded');
+//
+//   }, 800);
+// });
   function adjustWindow() {
     // Init Skrollr
     var s = skrollr.init({
