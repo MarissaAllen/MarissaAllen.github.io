@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body class="fl-page loading">
+	<main>
+		<!--Animations-->
+		<div class="text-center detail">
+			<h2>Animations</h2>
+			<h3>Design: Maya, Adobe AfterEffects, iMovie </h3>
+			<br>
+			<p>Below is a collection of some of my animation projects.</p>
+			<br>
+
+			<!--Sothebys-->
+			<h3>Sotheby's Animated Logo</h3>
+			<p>This is an animated logo for the Hanover, NH Sotheby's Real Estate
+				branch for their own website and presentations.</p>
+			<br>
+			<div class="youtube-container">
+					<div class="youtube-player video" data-id="9eDipSmiZvk"></div>
+			</div>
+			<br>
+				<!--CPD-->
+			<h3>Center for Professional Development's Annual Report</h3>
+			<p>This is an animated status report for Dartmouth's Center for
+							Professional Development. Instead of showing the Trustees of
+							Dartmouth their usual many-paged, dry report, the CPD (Center for Professional
+							Development) wanted a different way to display their statistics and show their impact on campus.</p>
+			<br>
+			<div class="youtube-container">
+					<div class="youtube-player video" data-id="gHyhPMXSPEw"></div>
+			</div>
+			<br>
+				<!--24-hour Make-a-thon-->
+			<h3>24-Hour Make-A-Thon Animation</h3>
+			<p>This is a short stop-motion animation for a 24-hour <a href="http://www.cs.dartmouth.edu/~dmax/makeathon.html">Make-A-Thon</a> contest. My partner and I wrote,
+				 designed, constructed, 3D-printed, animated, and edited this award-winning film in a brief 24-hour period. We won 2nd place.</p>
+			<br>
+			<div class="youtube-container">
+					<div class="youtube-player video" data-id="Z3-GNHi3q7E"></div>
+			</div>
+			<br>
+				<!--cs27 animation-->
+			<h3>Advanced Animation Project</h3>
+			<p>This is an animation was the final animation for CS 27 (Advanced Animation Projects). Our three-person team wrote, modelled, designed, and animated
+			this film in Maya, over the course of 7 weeks.</p>
+			<br>
+			<div class="youtube-container">
+				<div class="youtube-player video" data-id="Zl9sVhVJ7oc"></div>
+			</div>
+		</div>
+
+			<!--SCRIPTS-->
+			<script>
+			$(document).ready(function() {
+				$body = $('body');
+				//FadeIn all sections
+				$body.imagesLoaded( function() {
+				setTimeout(function() {
+
+							// Resize sections
+							adjustWindow();
+
+							// Fade in sections
+						$body.removeClass('loading').addClass('loaded');
+
+				}, 800);
+				});
+
+			var v = document.getElementsByClassName("youtube-player");
+			for (var n = 0; n < v.length; n++) {
+				var p = document.createElement("div");
+				p.innerHTML = labnolThumb(v[n].dataset.id);
+				p.onclick = labnolIframe;
+				v[n].appendChild(p);
+			}
+
+			function labnolThumb(id) {
+				return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
+			}
+
+			function labnolIframe() {
+				var iframe = document.createElement("iframe");
+				iframe.setAttribute("class", "video");
+				iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&rel=0&amp&showinfo=0");
+				iframe.setAttribute("frameborder", "0");
+				iframe.setAttribute("id", "youtube-iframe");
+				this.parentNode.replaceChild(iframe, this);
+			}
+		});
+			</script>
+	</main>
+
+</body>
+
+</html>

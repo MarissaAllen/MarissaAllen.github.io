@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body class="fl-page">
+	<main>
+		<div class="text-center detail">
+			<h2>Personal Logo Design </h2>
+			<h3>Design: Adobe Illustrator</h3>
+			<br>
+			<h3>Inspirations</h3>
+			<p>This is a showcase of my personal logo design process. I wanted my logo to represent some important aspects of my life, so I drew my inspiration from my favorite animal (red pandas), the landscape that always makes me feel most at home (mountains),
+				and a symbol of my Navajo heritage (geometric rug-designs). </p>
+			<img class="photo" src="img/logo/inspirations.jpg"></img>
+			<br>
+			<h3>Thumbnail Sketches</h3>
+			<p>With these inspirations in mind, I drew up some thumbnail sketches.</p>
+			<img class="photo" src="img/logo/thumbs.jpg"></img>
+			<br>
+			<h3>Initial Designs</h3>
+			<p>From these sketches, I played with a few themes and made these intial designs.</p>
+			<img class="photo" src="img/logo/initial.jpg"></img>
+			<br>
+			<h3>Iterations</h3>
+			<p>Once I had an idea I liked, I decided to iterate it to death, varying the colors, the text, and the background</p>
+			<img class="photo" src="img/logo/iterations.jpg"></img>
+			<br>
+			<h3>Final Logo</h3>
+			<p>After iterating, I developed this, my final logo!</p>
+			<img class="small-photo" src="img/logo/logoMedDk.png"></img>
+			<img class="photo" src="img/logo/regHz.png"></img>
+		</div>
+		<script>
+			$(document).ready(function() {
+						$body = $('body');
+						//FadeIn all sections
+						$body.imagesLoaded(function() {
+							setTimeout(function() {
+
+								// Resize sections
+								adjustWindow();
+
+								// Fade in sections
+								$body.removeClass('loading').addClass('loaded');
+
+							}, 800);
+						});
+						});
+		</script>
+	</main>
+</body>
+
+</html>

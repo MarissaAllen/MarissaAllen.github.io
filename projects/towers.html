@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body class="fl-page">
+	<main>
+		<div class="text-center detail">
+			<h2>Towers of Hanoi for Khan Academy (CS 98 Culminating Project)</h2>
+			<h3>Web Development: Javascript, HTML, CSS, Processing</h3>
+			<img class="photo" src="img/towers/Towers.jpg"></img>
+			<br>
+			<p>Working in a team, this was my Senior Culminating experience. The class was designed to be an open-ended way to self-learn web development. The project's goal evolved into a way to help new computer science students understand algorithms and learn
+				Javascript. Our module focused on recursion, so we decided to demonstrate the Towers of Hanoi. For this project, I worked on several aspects of the Processing canvas module and the javascript that allows the code in the console to execute and move
+				the rings. <a href="https://github.com/98recursion/CS98Recursion">Repo Here</a></p>
+			<br>
+			<div class="youtube-container">
+				<div class="youtube-player video" data-id="Qsphc26Rs8E"></div>
+			</div>
+			<p>Khan Academy selected our example to feature on their site.</p>
+			<img class="photo" src="img/towers/KhanTowers.jpg"></img>
+		</div>
+
+		<script>
+			$(document).ready(function() {
+				$body = $('body');
+				//FadeIn all sections
+				$body.imagesLoaded(function() {
+					setTimeout(function() {
+
+						// Resize sections
+						adjustWindow();
+
+						// Fade in sections
+						$body.removeClass('loading').addClass('loaded');
+
+					}, 800);
+				});
+				
+				var v = document.getElementsByClassName("youtube-player");
+				for (var n = 0; n < v.length; n++) {
+					var p = document.createElement("div");
+					p.innerHTML = labnolThumb(v[n].dataset.id);
+					p.onclick = labnolIframe;
+					v[n].appendChild(p);
+				}
+
+				function labnolThumb(id) {
+					return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
+				}
+
+				function labnolIframe() {
+					var iframe = document.createElement("iframe");
+					iframe.setAttribute("class", "video");
+					iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&rel=0&amp&showinfo=0");
+					iframe.setAttribute("frameborder", "0");
+					iframe.setAttribute("id", "youtube-iframe");
+					this.parentNode.replaceChild(iframe, this);
+				}
+			});
+		</script>
+
+	</main>
+</body>
+
+</html>

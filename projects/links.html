@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body class="fl-page loading">
+	<main>
+		<div class="text-center detail">
+			<h2>Animated Linkages </h2>
+			<h3>Development: Matlab</h3>
+			<img class="photo" src="img/links/smallManLink.jpg"></img>
+			<br>
+			<p>This assignment was a further study into links and motion for computational fabrication. I was provided with fully functional Matlab code for simulating
+				the kinematic behavior of the linkages, which I modified to include oscillating motion as well as rotational and designed 2D planar structures with revolute
+				joints demonstrating different linkages.</p>
+			<h3>Four-Bar Linkages</h3>
+			<p>These first four linkages are different four-bar linkage designs</p>
+			<img class="photo" src="img/links/FourBarLinkages.jpg"></img>
+				<h3>Drag-Link</h3>
+				<div class="youtube-container">
+					<div class="youtube-player video" data-id="UxRdvX7KnQs"></div>
+				</div>
+				<br>
+				<h3>Crank-Rocker</h3>
+				<div class="youtube-container">
+					<div class="youtube-player video" data-id="Xl3prU2nl0k"></div>
+				</div>
+				<br>
+				<h3>Double-Rocker</h3>
+				<div class="youtube-container">
+					<div class="youtube-player video" data-id="iW8GsFqmVdk"></div>
+				</div>
+				<br>
+				<h3>Parallelogram-Linkage</h3>
+				<div class="youtube-container">
+					<div class="youtube-player video" data-id="sHZTQi2WiZc"></div>
+				</div>
+				<br>
+				<h3>Hoekens Linkage</h3>
+				<p>This is a crank-rocker mechanism that produces a nearly straight line.</p>
+				<div class="youtube-container">
+					<div class="youtube-player video" data-id="nwFmhcpHk5s"></div>
+				</div>
+				<br>
+				<h3>Peaucellier-Lipkin Linkage</h3>
+				<p>The Peaucellier-Lipkin Linkage "was the first planar linkage capable of transforming rotary motion
+					into perfect straight-line motion, and vice versa.”-<a href="https://en.wikipedia.org/wiki/Peaucellier%E2%80%93Lipkin_linkage">Wikipedia</a></p>
+					<div class="youtube-container">
+						<div class="youtube-player video" data-id="8Gvx34dXpRc"></div>
+					</div>
+					<br>
+					<h3>Klann Linkage</h3>
+					<p>The Klann linkage models the motion of walking animal, providing The Klann linkage provides many of the benefits of more advanced walking vehicles without some of their limitations. </p>
+					<div class="youtube-container">
+						<div class="youtube-player video" data-id="Mol9sL0mrlg"></div>
+					</div>
+					<br>
+					<h3>Perserverance Linkage</h3>
+					<p>The final linkage project was to model the behavior of a man pushing
+						 a load based on <a href="http://www.disneyresearch.com/wp-content/uploads/CDMC.pdf">this paper.</a>.
+						 Here is a demostration of the desired behavior. I 3D-printed and assembled my own model (not shown) This 3D-printed model from the paper can be found on thingiverse. </p>
+					<div class="youtube-container">
+						<div class="youtube-player video" data-id="sbmPax3fRTc"></div>
+					</div>
+					<p> Then I recreated the behavior using links.</p>
+					<img class="small-photo" src="img/links/manLinkDiagram.jpg"></img>
+					<p>Here is the result from the code:</p>
+					<div class="youtube-container">
+						<div class="youtube-player video" data-id="kYLGEpzJOqY"></div>
+					</div>
+			</div>
+
+			<script>
+				$(document).ready(function() {
+					$body = $('body');
+					//FadeIn all sections
+					$body.imagesLoaded(function() {
+						setTimeout(function() {
+
+							// Resize sections
+							adjustWindow();
+
+							// Fade in sections
+							$body.removeClass('loading').addClass('loaded');
+
+						}, 800);
+					});
+					
+					var v = document.getElementsByClassName("youtube-player");
+					for (var n = 0; n < v.length; n++) {
+						var p = document.createElement("div");
+						p.innerHTML = labnolThumb(v[n].dataset.id);
+						p.onclick = labnolIframe;
+						v[n].appendChild(p);
+					}
+
+					function labnolThumb(id) {
+						return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
+					}
+
+					function labnolIframe() {
+						var iframe = document.createElement("iframe");
+						iframe.setAttribute("class", "video");
+						iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&rel=0&amp&showinfo=0");
+						iframe.setAttribute("frameborder", "0");
+						iframe.setAttribute("id", "youtube-iframe");
+						this.parentNode.replaceChild(iframe, this);
+					}
+				});
+			</script>
+	</main>
+</body>
+
+</html>
