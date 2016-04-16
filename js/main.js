@@ -65,6 +65,7 @@
     },
     variant: 'featherlight-gallery'
   });
+////
 
   //youtube video
     var v = document.getElementsByClassName("youtube-player");
