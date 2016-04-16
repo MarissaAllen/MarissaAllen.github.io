@@ -10,9 +10,7 @@
 			<h2>CS 77 Renderer</h2>
 			<h3>Development: C++</h3>
 			<br>
-			<p>For this project, I implemented a raytracer that takes in JSON files
-				and renders the image, here are some of the features that it implements.
-				On the right are the before photos and on the left are the after photos.</p>
+			<p>For this project, I implemented a raytracer that takes in JSON files and renders the image, here are some of the features that it implements. On the right are the before photos and on the left are the after photos.</p>
 			<h3>Texture Tiling</h3>
 			<img class="photo" src="img/graphics/textures.jpg"></img>
 			<h3>Quad Lights</h3>
@@ -34,11 +32,64 @@
 			<p>Depth of field blurring over the lens of the camera using Monte Carlo sampling </p>
 			<img class="photo" src="img/graphics/depths.png"></img>
 		</div>
+		<p>Here is a sample of the raytrace code that implements depth of field with monte carlo sampling (the randomization of the origin of the ray)</p>
+		<pre><code>
+// Rendering Code
+// pathtrace an image
+void pathtrace(Scene* scene, image3f* image, RngImage* rngs, int offset_row, int skip_row, bool verbose) {
+		if(verbose) message("\n  rendering started        ");
+		// foreach pixel
+		  for(auto j = offset_row; j < scene->image_height; j += skip_row ) {
+		      if(verbose) message("\r  rendering %03d/%03d        ", j, scene->image_height);
+		        for(auto i = 0; i < scene->image_width; i ++) {
+		        	// init accumulated color
+		          image->at(i,j) = zero3f;
 
-		<pre>insert raytrace code maaybe monte carlo</pre>
+							// grab proper random number generator
+		          auto rng = &rngs->at(i, j);
+
+							// foreach sample
+		          for(auto jj : range(scene->image_samples)) {
+		            for(auto ii : range(scene->image_samples)) {
+
+										// compute ray-camera parameters (u,v) for the pixel and the sample
+		                auto u = (i + (ii + rng->next_float())/scene->image_samples) /
+		                scene->image_width;
+		                auto v = (j + (jj + rng->next_float())/scene->image_samples) /
+		                scene->image_height;
+
+		                //Depth of Field
+		                // random origin of ray from lens
+		                auto xy =rng->next_vec2f();
+		                float x = scene->camera->radius * (xy.x - 0.5f);
+		                float y = scene->camera->radius * (xy.y - 0.5f);
+
+		                vec3f rndVec = vec3f(x, y, 0);
+
+		                vec3f s = vec3f((u-0.5f)*scene->camera->width,(v-0.5f)*scene->camera->height,-1* scene->camera->dist);
+
+		                // compute camera ray
+		                auto ray = transform_ray(scene->camera->frame,
+		                ray3f(rndVec,normalize(s-rndVec)));
+
+		                // set pixel to the color raytraced with the ray
+		                image->at(i,j) += pathtrace_ray(scene,ray,rng,0);
+
+		                }
+		            }
+		            // scale by the number of samples
+		            image->at(i,j) /= (scene->image_samples*scene->image_samples);
+		        }
+		    }
+			if(verbose) message("\r  rendering done        \n");
+}</code></pre>
 
 		<script>
-			hljs.initHighlightingOnLoad();
+			$(document).ready(function() {
+				$('pre code').each(function(i, block) {
+					hljs.highlightBlock(block);
+				});
+			});
 		</script>
 
 	</main>
