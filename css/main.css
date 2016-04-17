@@ -415,6 +415,7 @@ div.play-button {
   }
   .featherlight .featherlight-content {
     width: 80vw;
+    overflow-y: scroll;
   }
 
 .featherlight .featherlight-inner {
