@@ -99,6 +99,9 @@ section {
 main {
   overflow-x: hidden;
 }
+#footer a{
+  font-weight: 500;
+}
 footer .logo {
   /*margin-top: 20px;*/
   width: 150px;
