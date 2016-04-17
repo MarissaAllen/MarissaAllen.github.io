@@ -385,6 +385,9 @@ div.play-button {
   .lightbox {
     display: none;
   }
+  .fl-page{
+    overflow: scroll;
+  }
   .fl-page h1, .fl-page h3, .fl-page h4 {
     font-weight: 100;
     letter-spacing: 1px;
@@ -415,7 +418,6 @@ div.play-button {
   }
   .featherlight .featherlight-content {
     width: 80vw;
-    overflow-y: scroll;
   }
 
 .featherlight .featherlight-inner {
