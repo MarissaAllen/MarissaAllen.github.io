@@ -85,7 +85,10 @@ hr {
   padding-top: 106px;
 }
 .loading {
-	background: url('../img/ico_loading.gif') no-repeat center center;
+	background: url('../img/ico_loading.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 650px;
 }
 section {
   opacity: 0;
