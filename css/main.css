@@ -193,6 +193,9 @@ a:hover {
   margin-top: 3px;
 }
 
+ul.dots{
+  list-style-type: circle;
+}
 
 /* bit of padding in the main content containers */
 
