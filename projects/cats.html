@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head></head>
 
 <body class="fl-page loading">
 	<main>
-			<!---Giphy Cats -->
-			<div class="text-center detail">
-				<h2>React Giphy Cats</h2>
-				<h3>In Progress: Swift, React Native</h3>
-				<img class="small-photo" src="img/cats/cavey.jpg"></img>
-			</div>
-			<br>
-			<p>
-			React Giphy Cats is a project I am currently working on using React Native and iOs. The app's goal is to detect user's stress
-			and show the user a fun cat gif to provide a brief distraction and hopefully
-			alleviate that stress.  To combat possible correlation betweem
-			stress and gifs that would undermine the gifs positive effects, the app also inserts gifs at random times throughout the day.
-		Progress can be track at <a href="https://github.com/MarissaAllen/CatStressApp">this repo.</a></p>
+		<!---Giphy Cats -->
+		<div class="text-center detail">
+			<h2>React Giphy Cats</h2>
+			<h3>In Progress: Swift, React Native</h3>
+			<img class="small-photo" src="img/cats/cavey.jpg"></img>
+		</div>
+		<br>
+		<p>
+			React Giphy Cats is a project I am currently working on using React Native and iOs. The app's goal is to show the user a fun animal gif, at random times throughout the day, to provide a brief distraction and hopefully alleviate some immediate stress.
+			I plan on using this tutorial as a guide for development. Code progress can be track at
+			<a href="https://github.com/MarissaAllen/CatStressApp">this repo.</a></p>
+		<p>The ultimate goal for the project would be to find a way to measure the app's effectiveness and integrate Apple's Healthkit to create a model that detects stress. Ideally, I would combine that model with random gif insertions to combat any correlation
+			between gifs and stress.
+		</p>
+		<p>
+			In order to better define its purpose, functionality and how the user interacts with the app,
+			 I considered what features I wanted to include:
+			<br> Show entertaining animal gifs at random times during the day.
+			<br> The option to dismiss the app or postpone, if user is busy or doesn't want a distraction.
+			<br> A way to change the gifs or see more gifs.
+			<br> Timeout feature or cap on number of gifs that will prevent the user from wasting too much time.
+		</p>
+
+
+		<p>After figuring out how the app will be used, I designed some initial mockups.</p>
 
 		<script>
 			$(document).ready(function() {
-						$body = $('body');
-						//FadeIn all sections
-						$body.imagesLoaded(function() {
-							setTimeout(function() {
+				$body = $('body');
+				//FadeIn all sections
+				$body.imagesLoaded(function() {
+					setTimeout(function() {
 
-								// Resize sections
-								adjustWindow();
+						// Resize sections
+						adjustWindow();
 
-								// Fade in sections
-								$body.removeClass('loading').addClass('loaded');
+						// Fade in sections
+						$body.removeClass('loading').addClass('loaded');
 
-							}, 800);
-						});
-						});
+					}, 800);
+				});
+			});
 		</script>
 	</main>
 </body>
