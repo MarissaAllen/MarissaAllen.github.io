@@ -196,7 +196,9 @@ a:hover {
 ul.dots{
   list-style-type: circle;
 }
-
+li{
+  text-align: left;
+}
 /* bit of padding in the main content containers */
 
 .content .container {
