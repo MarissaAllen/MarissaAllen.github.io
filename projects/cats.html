@@ -36,16 +36,15 @@
 			<p>So far, I've added a View to the project and changed a bit of the index.ios.js and included a picture of Caveman the Cat. The next step is to try to display gifs from giphy which requires a study of the giphy api!</p>
 			<img class="small-photo" src="img/cats/prog1.png"></img>
 			<h3>To Try</h3>
-			<p>After reading up on the giphy api and <a href="http://blog.tighten.co/react-101-building-a-gif-search-engine">this tutorial</a>, I have several options in structuring my app. I could call giphy every time the user swipes, I could use the plugin react-giphy
-				to make the same call when the user swipes to change gifs, or I could call giphy once and recieve a list of gifs to iterate through when the user swipes.</p>
-			<p> I decided, for my first go-around, to try the third option and structure my app in the following way:
+			<p>After reading up on the giphy api and <a href="http://blog.tighten.co/react-101-building-a-gif-search-engine">this tutorial</a>, it seems that I have several options in structuring my app. I could call giphy every time the user swipes to change gifs, I could use the plugin react-giphy
+				to make the same call when the user swipes, or I could call giphy once and recieve a list of gifs to iterate through when the user swipes.</p>
+			<p>I decided, for my first go-around, to try the third option and structure my app in the following way:</p>
 				<ul class "dots">
 					<li> Create a separate component/class to load all of the gifs into a list</li>
 					<li> Use the size of the list to determine the distraction duration</li>
-					<li> Use the a separate gifView to view one gif and then iterate through the list</li>
+					<li> Use the a separate gifView to view one gif at a time, iterating through the list</li>
 				</ul>
-				This should result in quicker iteration through gifs and less wait in-between which suits my needs, because the app should be actively showing gifs for short periodic bursts.
-			</p>
+				<p>This should result in quicker iteration through gifs and less wait in-between which suits my needs, because the app should be actively showing gifs for short periodic bursts.</p>
 		</div>
 
 		<script>
