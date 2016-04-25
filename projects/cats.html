@@ -11,34 +11,42 @@
 			<h3>In Progress: Swift, React Native</h3>
 			<img class="small-photo" src="img/cats/cavey.jpg"></img>
 
-		<br>
-		<p>
-			React Giphy Cats is a project I am currently working on using React Native and iOs. The app's goal is to show the user a fun animal gif, at random times throughout the day, to provide a brief distraction and hopefully alleviate some immediate stress.
-			I plan on using <a href="https://www.raywenderlich.com/126063/react-native-tutorial">this tutorial</a>, as a guide for development. Code progress can be track at
-			<a href="https://github.com/MarissaAllen/CatStressApp">this repo.</a></p>
-		<p>The ultimate goal for the project would be to find a way to measure the app's effectiveness and integrate Apple's Healthkit to create a model that detects stress. Ideally, I would combine that model with random gif insertions to combat any correlation
-			between gifs and stress.
-		</p>
-		<p>
-			In order to better define its purpose, functionality, and how the user interacts with the app,
-			 I considered what features I wanted to include in this first round:
-		<ul class "dots">
-			<li> Show entertaining animal gifs at random times during the day.</li>
-			<li> The option to dismiss the app or postpone, if user is busy or doesn't want a distraction.</li>
-			<li> A way to change the gifs or see more gifs.</li>
-			<li> Timeout feature or cap on number of gifs that will prevent the user from wasting too much time.</li>
-		</ul>
-		</p>
-		<h3>Initial Mockups</h3>
-		<p>After figuring out how the app will be used, I designed some initial mockups.</p>
-		<img class="photo" src="img/cats/wireframes.jpg"></img>
-		<img class="photo" src="img/cats/wireframes1.jpg"></img>
-		<h3>First step</h3>
-		<p>So far, I've added a View to the project and changed a bit of the index.ios.js and included a picture of Caveman the Cat.
-		The next step is to try to display gifs from giphy which requires a study of the giphy api!</p>
-		<img class="small-photo" src="img/cats/prog1.png"></img>
-
-</div>
+			<br>
+			<p>
+				React Giphy Cats is a project I am currently working on using React Native and iOs. The app's goal is to show the user a fun animal gif, at random times throughout the day, to provide a brief distraction and hopefully alleviate some immediate stress.
+				I plan on using <a href="https://www.raywenderlich.com/126063/react-native-tutorial">this tutorial</a>, as a guide for development. Code progress can be track at
+				<a href="https://github.com/MarissaAllen/CatStressApp">this repo.</a></p>
+			<p>The ultimate goal for the project would be to find a way to measure the app's effectiveness and integrate Apple's Healthkit to create a model that detects stress. Ideally, I would combine that model with random gif insertions to combat any correlation
+				between gifs and stress.
+			</p>
+			<p>
+				In order to better define its purpose, functionality, and how the user interacts with the app, I considered what features I wanted to include in this first round:
+				<ul class "dots">
+					<li> Show entertaining animal gifs at random times during the day.</li>
+					<li> The option to dismiss the app or postpone, if user is busy or doesn't want a distraction.</li>
+					<li> A way to change the gifs or see more gifs.</li>
+					<li> Timeout feature or cap on number of gifs that will prevent the user from wasting too much time.</li>
+				</ul>
+			</p>
+			<h3>Initial Mockups</h3>
+			<p>After figuring out how the app will be used, I designed some initial mockups.</p>
+			<img class="photo" src="img/cats/wireframes.jpg"></img>
+			<img class="photo" src="img/cats/wireframes1.jpg"></img>
+			<h3>First step</h3>
+			<p>So far, I've added a View to the project and changed a bit of the index.ios.js and included a picture of Caveman the Cat. The next step is to try to display gifs from giphy which requires a study of the giphy api!</p>
+			<img class="small-photo" src="img/cats/prog1.png"></img>
+			<h3>To Try</h3>
+			<p>After reading up on the giphy api and <a href="http://blog.tighten.co/react-101-building-a-gif-search-engine">this tutorial</a>, I have several options in structuring my app. I could call giphy every time the user swipes, I could use the plugin react-giphy
+				to make the same call when the user swipes to change gifs, or I could call giphy once and recieve a list of gifs to iterate through when the user swipes.</p>
+			<p> I decided, for my first go-around, to try the third option and structure my app in the following way:
+				<ul class "dots">
+					<li> Create a separate component/class to load all of the gifs into a list</li>
+					<li> Use the size of the list to determine the distraction duration</li>
+					<li> Use the a separate gifView to view one gif and then iterate through the list</li>
+				</ul>
+				This should result in quicker iteration through gifs and less wait in-between which suits my needs, because the app should be actively showing gifs for short periodic bursts.
+			</p>
+		</div>
 
 		<script>
 			$(document).ready(function() {
