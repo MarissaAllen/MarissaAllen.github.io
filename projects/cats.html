@@ -52,11 +52,13 @@
 			Then I need to create and update the state of the list and pass it to the gifView. Once this is done I can then pick one gif from the list
 			to display. This item will be defined in another file and be changed when the user clicks next.</p>
 			<p>So that didn't work. I couldn't find a successful way to pass the gif list to the view using navigatorIOS. So instead of requesting in the index,
-			I immediately open the gifView and make a request there. It seems to be working, I no longer see a null object in my state and can access the list of gifs. I don't think I'll need another file for the gifs, but we'll see.</p>
+			I immediately open the gifView and make a request there. </p>
 
 			<h3>Iterating Through Gifs</h3>
 			<p>So it's been a harrowing journey, I've traced through examples trying to figure out how in the world things get called and where they do.
-			I still don't know everything, but I now can successfully iterate through a list of gifs from giphy. The catch? I can't yet see them, but soon I will figure that out. There's nothing much to see at this point.</p>
+			I still don't know everything, but I now can successfully iterate through a list of gifs and show them from giphy. The trick was that I had
+			to map the list, once I requsted it, in order to access the object's url. Now, I just have to check that there is in fact a gif there and not a
+			null object before I render the gif in the view.</p>
 			<img class="small-photo" src="img/cats/gifCats1.gif"></img>
 
 		</div>
